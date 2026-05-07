@@ -26,5 +26,6 @@
   "[mdx]": {
     "editor.defaultFormatter": "unifiedjs.vscode-mdx",
     "editor.formatOnSave": false
-  }
+  },
+  "sarif-viewer.connectToGithubCodeScanning": "on"
 }
