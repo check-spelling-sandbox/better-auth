@@ -903,7 +903,7 @@ describe("multi team support", async () => {
 		expect(accept?.invitation).toBeDefined();
 	});
 
-	it("should have jonied all 3 teams", async () => {
+	it("should have joined all 3 teams", async () => {
 		expect(invitationId).toBeDefined();
 
 		if (!invitationId) throw Error("cannot run test");
