@@ -866,7 +866,7 @@ export const listTeamMembers = <O extends OrganizationOptions>(options: O) =>
 												teamId: {
 													type: "string",
 													description:
-														"The team ID of the team the team member is in",
+														"The team ID of the team containing the team member",
 												},
 												createdAt: {
 													type: "string",
@@ -964,7 +964,7 @@ export const addTeamMember = <O extends OrganizationOptions>(options: O) =>
 											teamId: {
 												type: "string",
 												description:
-													"The team ID of the team the team member is in",
+													"The team ID of the team containing the team member",
 											},
 											createdAt: {
 												type: "string",
