@@ -96,7 +96,7 @@ export function isCI() {
 		env.CI !== "false" &&
 		("BUILD_ID" in env || // Jenkins, Cloudbees
 			"BUILD_NUMBER" in env || // Jenkins, TeamCity
-			"CI" in env || // Travis CI, CircleCI, Cirrus CI, Gitlab CI, Appveyor, CodeShip, dsari, Cloudflare
+			"CI" in env || // Travis CI, CircleCI, Cirrus CI, GitLab CI, Appveyor, CodeShip, dsari, Cloudflare
 			"CI_APP_ID" in env || // Appflow
 			"CI_BUILD_ID" in env || // Appflow
 			"CI_BUILD_NUMBER" in env || // Appflow
