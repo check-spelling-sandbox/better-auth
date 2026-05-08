@@ -3393,7 +3393,7 @@ describe("stripe", () => {
 		// Clear mocks to track the update
 		vi.clearAllMocks();
 
-		// Re-setup the retrieve mock for the update flow
+		// Re-set-up the retrieve mock for the update flow
 		mockStripe.customers.retrieve = vi.fn().mockResolvedValue({
 			id: "cus_mock123",
 			email: "test@example.com",
