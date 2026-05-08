@@ -33,7 +33,7 @@ export async function consentEndpoint(
 		});
 	}
 
-	// Check scopes if received (can only be equal or lesser than originally requested scopes)
+	// Check scopes if received (can only be equal or less than originally requested scopes)
 	const requestedScopes = (ctx.body.scope as string | undefined)?.split(" ");
 	if (requestedScopes) {
 		if (!requestedScopes.every((sc) => originalRequestedScopes?.includes(sc))) {
