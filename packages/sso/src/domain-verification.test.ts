@@ -229,7 +229,7 @@ describe("Domain verification", async () => {
 			expect(await response.json()).toEqual({
 				message:
 					"User must be owner of or belong to the SSO provider organization",
-				code: "INSUFICCIENT_ACCESS",
+				code: "INSUFFICIENT_ACCESS",
 			});
 		});
 
@@ -264,7 +264,7 @@ describe("Domain verification", async () => {
 			expect(await response.json()).toEqual({
 				message:
 					"User must be owner of or belong to the SSO provider organization",
-				code: "INSUFICCIENT_ACCESS",
+				code: "INSUFFICIENT_ACCESS",
 			});
 		});
 
@@ -431,7 +431,7 @@ describe("Domain verification", async () => {
 			expect(await response.json()).toEqual({
 				message:
 					"User must be owner of or belong to the SSO provider organization",
-				code: "INSUFICCIENT_ACCESS",
+				code: "INSUFFICIENT_ACCESS",
 			});
 		});
 
@@ -464,7 +464,7 @@ describe("Domain verification", async () => {
 			expect(await response.json()).toEqual({
 				message:
 					"User must be owner of or belong to the SSO provider organization",
-				code: "INSUFICCIENT_ACCESS",
+				code: "INSUFFICIENT_ACCESS",
 			});
 		});
 
