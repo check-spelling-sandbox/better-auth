@@ -41,7 +41,7 @@ export const captcha = (options: CaptchaOptions) =>
 				// we don't want to accidentally block email-otp endpoint.
 				const blockedPaths = ["/sign-in/email-otp"].reduce<string[]>(
 					(acc, curr) => {
-						// if custom endpoints includes a blocked path, we dont include the blocked path in the blocked paths array
+						// if custom endpoints includes a blocked path, we don't include the blocked path in the blocked paths array
 						if (options.endpoints?.length && options.endpoints.includes(curr)) {
 							return acc;
 						}

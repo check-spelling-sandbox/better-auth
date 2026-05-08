@@ -130,7 +130,7 @@ export type BetterAuthPlugin = BetterAuthPluginErrorCodePart & {
 	 * The migrations of the plugin. If you define schema that will automatically create
 	 * migrations for you.
 	 *
-	 * ⚠️ Only uses this if you dont't want to use the schema option and you disabled migrations for
+	 * ⚠️ Only uses this if you don't want to use the schema option and you disabled migrations for
 	 * the tables.
 	 */
 	migrations?: Record<string, Migration> | undefined;
