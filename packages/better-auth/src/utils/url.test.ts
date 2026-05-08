@@ -284,7 +284,7 @@ describe("matchesHostPattern", () => {
 			expect(matchesHostPattern("localhost:3000", "localhost:3000")).toBe(true);
 		});
 
-		it("should be case insensitive", () => {
+		it("should be case-insensitive", () => {
 			expect(matchesHostPattern("MyApp.COM", "myapp.com")).toBe(true);
 			expect(matchesHostPattern("myapp.com", "MyApp.COM")).toBe(true);
 		});
