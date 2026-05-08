@@ -1118,7 +1118,7 @@ describe("organization", async () => {
 		});
 
 		const users = [
-			"user1@emial.com",
+			"user1@example.org",
 			"user2@example.com",
 			"user3@example.com",
 			"user4@example.com",

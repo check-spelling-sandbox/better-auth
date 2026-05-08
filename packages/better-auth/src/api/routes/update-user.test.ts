@@ -283,7 +283,7 @@ describe("updateUser", async () => {
 		);
 		const headers = new Headers();
 		await client.signUp.email({
-			email: "new-email@emial.com",
+			email: "new-email@example.org",
 			name: "name",
 			password: "password",
 			fetchOptions: {
@@ -299,7 +299,7 @@ describe("updateUser", async () => {
 			where: [
 				{
 					field: "email",
-					value: "new-email@emial.com",
+					value: "new-email@example.org",
 				},
 			],
 		});
