@@ -5355,7 +5355,7 @@ describe("stripe", () => {
 				},
 			});
 
-			// Create an new incomplete subscription (without trial info)
+			// Create a new incomplete subscription (without trial info)
 			const incompleteSubId = "sub_incomplete_new";
 			await ctx.adapter.create({
 				model: "subscription",
