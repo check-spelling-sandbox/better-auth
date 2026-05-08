@@ -792,7 +792,7 @@ describe("oauth-proxy", async () => {
 			expect(payload.account.providerId).toBe("google");
 		});
 
-		it("should reject payloads with missing required fields", async () => {
+		it("should reject payloads missing required fields", async () => {
 			const { client, auth } = await getTestInstance({
 				plugins: [
 					oAuthProxy({
