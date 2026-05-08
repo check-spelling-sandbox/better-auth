@@ -129,7 +129,7 @@ export const initGetIdField = ({
 						}
 						// if DB will handle UUID generation, then we should return undefined.
 						if (supportsUUIDs) return undefined;
-						// if the value is not a string, and the database doesn't support generating it's own UUIDs, then we should be generating the UUID.
+						// if the value is not a string, and the database doesn't support generating its own UUIDs, then we should be generating the UUID.
 						if (typeof value !== "string" && !supportsUUIDs) {
 							return crypto.randomUUID();
 						}

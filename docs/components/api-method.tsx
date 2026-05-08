@@ -518,7 +518,7 @@ function tsxifyBackticks(input: string): JSX.Element {
 
 function parseCode(children: JSX.Element) {
 	// These two variables are essentially taking the `children` JSX shiki code, and converting them to
-	// an array string purely of it's code content.
+	// an array string purely of its code content.
 	const arrayOfJSXCode = children?.props.children.props.children.props.children
 		.map((x: any) =>
 			x === "\n" ? { props: { children: { props: { children: "\n" } } } } : x,
