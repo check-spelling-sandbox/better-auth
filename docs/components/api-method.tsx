@@ -92,19 +92,19 @@ export const APIMethod = ({
 	 */
 	method?: "POST" | "GET" | "DELETE" | "PUT";
 	/**
-	 * Wether the endpoint is server only or not.
+	 * Whether the endpoint is server only or not.
 	 *
 	 * @default false
 	 */
 	isServerOnly?: boolean;
 	/**
-	 * Wether the code example is client-only, thus meaning it's an endpoint.
+	 * Whether the code example is client-only, thus meaning it's an endpoint.
 	 *
 	 * @default false
 	 */
 	isClientOnly?: boolean;
 	/**
-	 * Wether the code example is meant for external consumers
+	 * Whether the code example is meant for external consumers
 	 */
 	isExternalOnly?: boolean;
 	/**
