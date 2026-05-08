@@ -504,7 +504,7 @@ This implementation currently issues a new refresh token for every refresh reque
 
 ### Consent Endpoint
 
-Accept or deny user consent for a set of scopes. Note that when denying scopes, the consent cancels and pre-existing consent remains. To remove consent, delete that user's "oauthConsent" for that client.
+Accept or deny user consent for a set of scopes. Note that when denying scopes, the consent cancels and preexisting consent remains. To remove consent, delete that user's "oauthConsent" for that client.
 
 <APIMethod path="/oauth2/consent" method="POST" requireSession>
   ```ts
