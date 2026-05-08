@@ -775,7 +775,7 @@ describe("api-key", async () => {
 		expect(apiKey.metadata.test).toEqual(metadata.test);
 	});
 
-	it("create API key with with metadata when metadata is disabled (should fail)", async () => {
+	it("create API key with metadata when metadata is disabled (should fail)", async () => {
 		const { auth, signInWithTestUser } = await getTestInstance(
 			{
 				plugins: [
