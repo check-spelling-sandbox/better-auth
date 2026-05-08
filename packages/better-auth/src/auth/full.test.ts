@@ -426,7 +426,7 @@ describe("auth with dynamic baseURL (allowedHosts)", () => {
 		expect(cookieDomain).toBe("auth.example2.com");
 	});
 
-	test("create a auth context per request which contains the internal adapter", async () => {
+	test("create an auth context per request which contains the internal adapter", async () => {
 		let baseURL: string | undefined;
 		let optionsBaseURL: string | undefined;
 		let internalAdapter: AuthContext["internalAdapter"] | undefined;
