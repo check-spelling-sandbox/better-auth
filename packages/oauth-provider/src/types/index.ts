@@ -908,9 +908,9 @@ export interface SchemaClient<
 	icon?: string;
 	/** List of contacts for the client. */
 	contacts?: string[];
-	/** Client Terms of Service Uri */
+	/** Client Terms of Service URI */
 	tos?: string;
-	/** Client Privacy Policy Uri */
+	/** Client Privacy Policy URI */
 	policy?: string;
 	//---- User Software Identifiers ----//
 	softwareId?: string;
