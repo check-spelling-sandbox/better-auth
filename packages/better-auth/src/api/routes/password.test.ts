@@ -314,7 +314,7 @@ describe("forgot password", async () => {
 			},
 		});
 		const res = await client.requestPasswordReset({
-			email: "non-existent-user@example.com",
+			email: "nonexistent-user@example.com",
 			redirectTo: "http://localhost:3000",
 		});
 		expect(res.data?.message).toBe(

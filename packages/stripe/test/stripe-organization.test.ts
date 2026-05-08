@@ -1386,7 +1386,7 @@ describe("stripe - organization customer", () => {
 		);
 	});
 
-	it("should return ORGANIZATION_NOT_FOUND when upgrading for non-existent organization", async () => {
+	it("should return ORGANIZATION_NOT_FOUND when upgrading for nonexistent organization", async () => {
 		const { client, sessionSetter } = await getTestInstance(
 			{
 				plugins: [organization(), stripe(baseOrgStripeOptions)],
@@ -1413,7 +1413,7 @@ describe("stripe - organization customer", () => {
 			},
 		);
 
-		// Try to upgrade subscription for non-existent organization
+		// Try to upgrade subscription for nonexistent organization
 		const res = await client.subscription.upgrade({
 			plan: "starter",
 			customerType: "organization",

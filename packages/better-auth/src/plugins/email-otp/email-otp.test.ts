@@ -1016,9 +1016,9 @@ describe("email-otp-verify", async () => {
 	);
 
 	it("should prevent user enumeration when disableSignUp is enabled", async () => {
-		// Should return success for non-existent user to prevent enumeration
+		// Should return success for nonexistent user to prevent enumeration
 		const response = await client.emailOtp.sendVerificationOtp({
-			email: "non-existent@domain.com",
+			email: "nonexistent@domain.com",
 			type: "email-verification",
 		});
 
@@ -1034,7 +1034,7 @@ describe("email-otp-verify", async () => {
 		expect(successRes.error).toBeFalsy();
 	});
 
-	it("should not send OTP email for non-existent users when disableSignUp is enabled", async () => {
+	it("should not send OTP email for nonexistent users when disableSignUp is enabled", async () => {
 		const sendOtpSpy = vi.fn();
 		const { client: testClient, testUser: existingUser } =
 			await getTestInstance(
@@ -1057,9 +1057,9 @@ describe("email-otp-verify", async () => {
 
 		sendOtpSpy.mockClear();
 
-		// Try to send OTP to non-existent user
+		// Try to send OTP to nonexistent user
 		const nonExistentResponse = await testClient.emailOtp.sendVerificationOtp({
-			email: "non-existent-user@example.com",
+			email: "nonexistent-user@example.com",
 			type: "sign-in",
 		});
 
@@ -2122,7 +2122,7 @@ describe("email-otp-resendStrategy", async () => {
 		expect(secondOtp).not.toBe(firstOtp);
 	});
 
-	it("should not send OTP for non-existent user on email-verification type", async () => {
+	it("should not send OTP for nonexistent user on email-verification type", async () => {
 		otps.length = 0;
 		const { client: noSignUpClient } = await getTestInstance(
 			{

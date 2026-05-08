@@ -343,9 +343,7 @@ describe("Electron", () => {
 		).rejects.toThrowError("NOT_FOUND");
 	});
 
-	it("should reject invalid/non-existent tokens", async ({
-		setProcessType,
-	}) => {
+	it("should reject invalid/nonexistent tokens", async ({ setProcessType }) => {
 		setProcessType("browser");
 
 		(globalThis as any)[kElectron] = new Map<string, string>([
@@ -356,7 +354,7 @@ describe("Electron", () => {
 			authenticate({
 				$fetch: client.$fetch,
 				options,
-				token: encodeRedirectToken("non-existent", "abc"),
+				token: encodeRedirectToken("nonexistent", "abc"),
 				// @ts-expect-error
 				getWindow: () => mockElectron.BrowserWindow,
 				fetchOptions: { throw: true },
@@ -388,14 +386,14 @@ describe("Electron", () => {
 	}) => {
 		setProcessType("browser");
 
-		// Create verification referencing a non-existent user id
+		// Create verification referencing a nonexistent user id
 		const identifier = generateRandomString(16, "A-Z", "a-z", "0-9");
 		await (await auth.$context).adapter.create({
 			model: "verification",
 			data: {
 				identifier: `electron:${identifier}`,
 				value: JSON.stringify({
-					userId: "non-existent-user",
+					userId: "nonexistent-user",
 					codeChallenge: "x",
 					codeChallengeMethod: "plain",
 					state: "abc",

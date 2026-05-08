@@ -539,7 +539,7 @@ describe("dynamic access control", async () => {
 	it("should not be allowed to delete a role that doesn't exist", async () => {
 		try {
 			const res = await auth.api.deleteOrgRole({
-				body: { roleName: "non-existent-role" },
+				body: { roleName: "nonexistent-role" },
 				headers,
 			});
 			expect(res).toBeNull();

@@ -1446,7 +1446,7 @@ describe("access control", async () => {
 		expect(res.error?.status).toBe(403);
 	});
 
-	it("should reject non-existent roles via update-user", async () => {
+	it("should reject nonexistent roles via update-user", async () => {
 		const { data: targetUserRes } = await client.signUp.email(
 			{
 				email: "role-target@test.com",
@@ -1463,7 +1463,7 @@ describe("access control", async () => {
 			{
 				userId: targetUserId,
 				data: {
-					role: "non-existent-role",
+					role: "nonexistent-role",
 				},
 			},
 			{
@@ -1752,7 +1752,7 @@ describe("access control", async () => {
 		expect(userRes.error?.status).toBe(403);
 	});
 
-	it("should not allow to set multiple non existent user role", async () => {
+	it("should not allow to set multiple nonexistent user role", async () => {
 		const createdUser = await client.admin.createUser(
 			{
 				name: "Test User mr",
@@ -1783,7 +1783,7 @@ describe("access control", async () => {
 		);
 	});
 
-	it("should not allow to set non existent user role", async () => {
+	it("should not allow to set nonexistent user role", async () => {
 		const createdUser = await client.admin.createUser(
 			{
 				name: "Test User mr",
@@ -1814,10 +1814,10 @@ describe("access control", async () => {
 		);
 	});
 
-	it("should throw error when assigning non-existent admin roles", async () => {
+	it("should throw error when assigning nonexistent admin roles", async () => {
 		expect(() =>
 			admin({
-				adminRoles: ["non-existent-role"],
+				adminRoles: ["nonexistent-role"],
 			}),
 		).toThrowError(BetterAuthError);
 	});
