@@ -419,7 +419,7 @@ export const createAdapterFactory =
 						const result = data[modelName];
 						return result;
 					} else {
-						// doesn't support joins, so fallback to handleFallbackJoin
+						// doesn't support joins, so fall back to handleFallbackJoin
 						const result = await handleFallbackJoin({
 							baseModel: unsafe_model,
 							baseData: transformedData,

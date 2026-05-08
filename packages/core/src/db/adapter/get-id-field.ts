@@ -79,7 +79,7 @@ export const initGetIdField = ({
 								return customIdGenerator({ model });
 							}
 
-							// fallback to default id generation
+							// fall back to default id generation
 							return defaultGenerateId();
 						},
 					}
@@ -97,7 +97,7 @@ export const initGetIdField = ({
 
 					if (useNumberId) {
 						const numberValue = Number(value);
-						// if invalid number, fallback to DB generated number id.
+						// if invalid number, fall back to DB generated number id.
 						if (isNaN(numberValue)) {
 							return undefined;
 						}

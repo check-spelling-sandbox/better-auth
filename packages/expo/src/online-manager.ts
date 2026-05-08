@@ -28,7 +28,7 @@ class ExpoOnlineManager implements OnlineManager {
 				this.unsubscribe = () => subscription.remove();
 			})
 			.catch(() => {
-				// fallback to always online
+				// fall back to always online
 				this.setOnline(true);
 			});
 

@@ -359,7 +359,7 @@ describe("internal adapter test", async () => {
 			expect(plainVerification.identifier).toBe("magic-link:token-xyz");
 		});
 
-		it("should fallback to plain lookup for old tokens", async () => {
+		it("should fall back to plain lookup for old tokens", async () => {
 			const database = new DatabaseSync(":memory:");
 
 			// First create with plain storage
@@ -1295,7 +1295,7 @@ describe("internal adapter test", async () => {
 			expect(found?.value).toBe("both-value");
 		});
 
-		it("should fallback to database when not in secondary storage", async () => {
+		it("should fall back to database when not in secondary storage", async () => {
 			const { dataMap, storage } = createMockStorage();
 
 			const dualStorageOpts = {

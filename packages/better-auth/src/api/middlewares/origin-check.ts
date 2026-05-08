@@ -326,6 +326,6 @@ async function validateFormCsrf(ctx: GenericEndpointContext): Promise<void> {
 		return await validateOrigin(ctx, true);
 	}
 
-	// No cookies, no Fetch Metadata → fallback to old behavior (no validation)
+	// No cookies, no Fetch Metadata → fall back to old behavior (no validation)
 	return;
 }

@@ -911,7 +911,7 @@ describe("SAML SSO without signed AuthnRequests", async () => {
 	});
 });
 
-describe("SAML SSO with idpMetadata but without metadata XML (fallback to top-level config)", async () => {
+describe("SAML SSO with idpMetadata but without metadata XML (fall back to top-level config)", async () => {
 	const data = {
 		user: [],
 		session: [],
@@ -1595,7 +1595,7 @@ describe("SAML SSO", async () => {
 		expect(callbackResponse.headers.get("location")).toContain("dashboard");
 	});
 
-	it("should initiate SAML login and fallback to callbackUrl on invalid RelayState", async () => {
+	it("should initiate SAML login and fall back to callbackUrl on invalid RelayState", async () => {
 		const { auth, signInWithTestUser } = await getTestInstance({
 			plugins: [sso()],
 		});
@@ -2608,7 +2608,7 @@ describe("SAML SSO", async () => {
 	/**
 	 * @see https://github.com/better-auth/better-auth/issues/7777
 	 */
-	it("should fallback to provider callbackUrl on ACS route when RelayState is invalid", async () => {
+	it("should fall back to provider callbackUrl on ACS route when RelayState is invalid", async () => {
 		const { auth, signInWithTestUser } = await getTestInstance({
 			plugins: [sso()],
 		});
@@ -2647,7 +2647,7 @@ describe("SAML SSO", async () => {
 			},
 		});
 
-		// POST with a garbage RelayState - should fallback to provider callbackUrl
+		// POST with a garbage RelayState - should fall back to provider callbackUrl
 		const acsResponse = await auth.handler(
 			new Request(
 				"http://localhost:3000/api/auth/sso/saml2/sp/acs/saml-acs-bad-relay-provider",

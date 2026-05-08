@@ -344,7 +344,7 @@ describe("Fetch Metadata CSRF Protection", async () => {
 		}
 	});
 
-	it("should fallback to origin validation when Fetch Metadata is missing", async (ctx) => {
+	it("should fall back to origin validation when Fetch Metadata is missing", async (ctx) => {
 		const requestWithoutMetadata = new Request(
 			"http://localhost:3000/api/auth/sign-in/email",
 			{

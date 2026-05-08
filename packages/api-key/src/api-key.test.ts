@@ -2978,7 +2978,7 @@ describe("api-key", async () => {
 			expect(second.error?.code).toBe("USAGE_EXCEEDED");
 		});
 
-		it("should fallback to database when not found in storage and auto-populate storage", async () => {
+		it("should fall back to database when not found in storage and auto-populate storage", async () => {
 			const { headers, user } = await signInWithTestUser();
 
 			// Create key directly in database adapter (bypassing storage)
@@ -3017,7 +3017,7 @@ describe("api-key", async () => {
 			expect(store.has(`api-key:by-id:${dbKey!.id}`)).toBe(false);
 			expect(store.has(`api-key:${hashedKey}`)).toBe(false);
 
-			// Retrieve it via API (should fallback to DB and auto-populate storage)
+			// Retrieve it via API (should fall back to DB and auto-populate storage)
 			const { data: retrievedKey } = await client.apiKey.get(
 				{ query: { id: dbKey!.id } },
 				{ headers: headers },
@@ -3101,7 +3101,7 @@ describe("api-key", async () => {
 			expect(store.has(`api-key:by-id:${dbKey2!.id}`)).toBe(false);
 			expect(store.has(`api-key:by-ref:${user.id}`)).toBe(false);
 
-			// List keys via API (should fallback to DB and auto-populate storage)
+			// List keys via API (should fall back to DB and auto-populate storage)
 			const { data: keys } = await client.apiKey.list({}, { headers: headers });
 
 			expect(keys).not.toBeNull();
