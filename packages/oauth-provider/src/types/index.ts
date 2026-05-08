@@ -555,7 +555,7 @@ export interface OAuthOptions<
 	 * NOTE: The prefix is not stored in the database.
 	 *
 	 * Useful when also using the [API Key Plugin](../api-key/index.ts)
-	 * or Secret Scanners (ie Github Secret Scanning, GitGuardian, Trufflehog).
+	 * or Secret Scanners (ie GitHub Secret Scanning, GitGuardian, Trufflehog).
 	 *
 	 * We recommend to append an underscore to make it more identifiable.
 	 */
