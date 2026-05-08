@@ -523,7 +523,7 @@ describe("expo", async () => {
 		let originHeader: string | null | undefined = null;
 		const storage = new Map<string, string>();
 
-		// Pre-populate storage with a cookie to verify it's NOT sent
+		// Prepopulate storage with a cookie to verify it's NOT sent
 		storage.set(
 			"better-auth_cookie",
 			JSON.stringify({
