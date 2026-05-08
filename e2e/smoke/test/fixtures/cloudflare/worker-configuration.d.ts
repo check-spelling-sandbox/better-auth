@@ -6836,7 +6836,7 @@ interface IncomingRequestCfPropertiesTLSClientAuth {
 	 * @example "FAILED:self signed certificate"
 	 */
 	certVerified: Exclude<CertVerificationStatus, "NONE">;
-	/** The presented certificate's revokation status.
+	/** The presented certificate's revocation status.
 	 *
 	 * - A value of `"1"` indicates the certificate has been revoked
 	 * - A value of `"0"` indicates the certificate has not been revoked
