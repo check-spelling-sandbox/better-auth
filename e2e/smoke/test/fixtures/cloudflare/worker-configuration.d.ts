@@ -4933,7 +4933,7 @@ interface Qwen_Qwq_32B_Messages {
 		  }
 	)[];
 	/**
-	 * JSON schema that should be fufilled for the response.
+	 * JSON schema that should be fulfilled for the response.
 	 */
 	guided_json?: object;
 	/**
@@ -5207,7 +5207,7 @@ interface Mistral_Small_3_1_24B_Instruct_Messages {
 		  }
 	)[];
 	/**
-	 * JSON schema that should be fufilled for the response.
+	 * JSON schema that should be fulfilled for the response.
 	 */
 	guided_json?: object;
 	/**
@@ -5300,7 +5300,7 @@ interface Google_Gemma_3_12B_It_Prompt {
 	 */
 	prompt: string;
 	/**
-	 * JSON schema that should be fufilled for the response.
+	 * JSON schema that should be fulfilled for the response.
 	 */
 	guided_json?: object;
 	/**
@@ -5477,7 +5477,7 @@ interface Google_Gemma_3_12B_It_Messages {
 		  }
 	)[];
 	/**
-	 * JSON schema that should be fufilled for the response.
+	 * JSON schema that should be fulfilled for the response.
 	 */
 	guided_json?: object;
 	/**
@@ -5753,7 +5753,7 @@ interface Ai_Cf_Meta_Llama_4_Messages {
 	)[];
 	response_format?: JSONMode;
 	/**
-	 * JSON schema that should be fufilled for the response.
+	 * JSON schema that should be fulfilled for the response.
 	 */
 	guided_json?: object;
 	/**
