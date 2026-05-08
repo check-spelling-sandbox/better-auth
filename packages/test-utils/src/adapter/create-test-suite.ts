@@ -218,7 +218,7 @@ export const createTestSuite = <
 			 * MongoDB uses ObjectId for IDs, but it's possible the user can disable that option in the adapter config.
 			 * Because of this, the expected data would be a string.
 			 * These sorts of conversions will cause issues with the test when you use the `generate` function.
-			 * This is because the `generate` function will return the raw data expected to be saved in DB, not the excpected BA output.
+			 * This is because the `generate` function will return the raw data expected to be saved in DB, not the expected BA output.
 			 */
 			transformGeneratedModel: (
 				data: Record<string, any>,
