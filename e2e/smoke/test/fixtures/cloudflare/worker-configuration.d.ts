@@ -2917,7 +2917,7 @@ interface WebSocket extends EventTarget<WebSocketEventMap> {
 	 */
 	send(message: (ArrayBuffer | ArrayBufferView) | string): void;
 	/**
-	 * Closes the WebSocket connection, optionally using code as the the WebSocket connection close code and reason as the the WebSocket connection close reason.
+	 * Closes the WebSocket connection, optionally using code as the WebSocket connection close code and reason as the WebSocket connection close reason.
 	 *
 	 * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close)
 	 */
@@ -3649,7 +3649,7 @@ interface Ai_Cf_Openai_Whisper_Large_V3_Turbo_Input {
 	 */
 	initial_prompt?: string;
 	/**
-	 * The prefix it appended the the beginning of the output of the transcription and can guide the transcription result.
+	 * The prefix it appended the beginning of the output of the transcription and can guide the transcription result.
 	 */
 	prefix?: string;
 }
@@ -7425,7 +7425,7 @@ interface Hyperdrive {
 	 */
 	readonly host: string;
 	/*
-	 * The port that must be paired the the host field when connecting.
+	 * The port that must be paired the host field when connecting.
 	 */
 	readonly port: number;
 	/*

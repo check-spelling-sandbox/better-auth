@@ -482,7 +482,7 @@ export interface OAuthOptions<
 	 * Use the user and referenceId fields to fetch
 	 * for membership roles/permissions to attach for the token.
 	 * Note that scopes are those that requested,
-	 * permissions are what the the user can actually do which
+	 * permissions are what the user can actually do which
 	 * must be done in this function.
 	 *
 	 * @param info - context that may be useful when creating custom claims
