@@ -460,7 +460,7 @@ export const verifyEmailOTP = (opts: RequiredEmailOTPOptions) =>
 												type: "string",
 												nullable: true,
 												description:
-													"Session token if autoSignInAfterVerification is enabled, otherwise null",
+													"Session token if autoSignInAfterVerification is enabled; otherwise, null",
 											},
 											user: {
 												$ref: "#/components/schemas/User",

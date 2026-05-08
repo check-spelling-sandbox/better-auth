@@ -989,7 +989,7 @@ By default, we support the following scopes are supported:
 * `email`: Returns email and email\_verified
 * `offline_access`: Returns a refresh token
 
-The scopes configuration can contain as many or as few scopes as you wish! Note that `openid` is required to be considered an OIDC server, otherwise this is a standard OAuth 2.1 server. All supported scopes must be in this array.
+The scopes configuration can contain as many or as few scopes as you wish! Note that `openid` is required to be considered an OIDC server; otherwise, this is a standard OAuth 2.1 server. All supported scopes must be in this array.
 
 ```ts title="auth.ts"
 oauthProvider({
@@ -2028,7 +2028,7 @@ export const oauthConsentTableFields = [
 
 Add a `prefix` to opaque access tokens, refresh tokens, or client secrets. This is useful for Secret Scanners (ie. [GitHub Secret Scanners](https://docs.github.com/code-security/secret-scanning), [GitGuardian](https://www.gitguardian.com/solutions/secrets-scanning), [Trufflehog](https://github.com/trufflesecurity/trufflehog)) that may rely on the prefix to help determine the token format.
 
-We recommend to add a prefix to each of the following prior to your first production deployment. Once deployed consider them immutable, otherwise the following generate functions as specified:
+We recommend to add a prefix to each of the following prior to your first production deployment. Once deployed consider them immutable; otherwise, the following generate functions as specified:
 
 The following are available under the `prefix` configuration setting:
 

@@ -10,7 +10,7 @@ import type { AuthQueryAtom } from "./query";
 const now = () => Math.floor(Date.now() / 1000);
 
 /**
- * Normalize $fetch response: `throw: true` returns data directly, otherwise `{ data, error }`.
+ * Normalize $fetch response: `throw: true` returns data directly; otherwise, `{ data, error }`.
  */
 function normalizeSessionResponse(res: unknown): {
 	data: SessionResponse | null;

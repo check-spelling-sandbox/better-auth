@@ -477,7 +477,7 @@ export const generatePrismaSchema: SchemaGenerator = async ({
 const getNewPrisma = (provider: string, cwd?: string) => {
 	const prismaVersion = getPrismaVersion(cwd);
 	const isV7 = prismaVersion && prismaVersion >= 7;
-	// Use "prisma-client" for Prisma v7+, otherwise use "prisma-client-js"
+	// Use "prisma-client" for Prisma v7+; otherwise, use "prisma-client-js"
 	const clientProvider = isV7 ? "prisma-client" : "prisma-client-js";
 
 	// In Prisma v7+, the url is configured in prisma.config.ts instead of the schema

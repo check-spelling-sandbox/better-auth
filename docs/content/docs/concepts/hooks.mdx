@@ -300,7 +300,7 @@ export const auth = betterAuth({
 
 #### runInBackgroundOrAwait
 
-Defers the task when a handler is configured, otherwise awaits it. Use for operations that must complete (e.g. sending emails) but benefit from not blocking when a handler exists. Configure the handler in [advanced.backgroundTasks](/docs/reference/options#backgroundtasks).
+Defers the task when a handler is configured; otherwise, awaits it. Use for operations that must complete (e.g. sending emails) but benefit from not blocking when a handler exists. Configure the handler in [advanced.backgroundTasks](/docs/reference/options#backgroundtasks).
 
 ```ts title="auth.ts"
 import { betterAuth } from "better-auth";
