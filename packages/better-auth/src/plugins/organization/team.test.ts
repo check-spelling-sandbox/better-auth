@@ -47,7 +47,7 @@ describe("team", async () => {
 	let secondTeamId: string;
 
 	const invitedUser = {
-		email: "invited@email.com",
+		email: "invited@example.com",
 		password: "password",
 		name: "Invited User",
 	};
@@ -337,7 +337,7 @@ describe("team", async () => {
 		const newUserHeaders = new Headers();
 		const newUserRes = await client.signUp.email(
 			{
-				email: "teamuser@email.com",
+				email: "teamuser@example.com",
 				password: "password",
 				name: "Team User",
 			},
@@ -784,7 +784,7 @@ describe("multi team support", async () => {
 	const invitedUser = await auth.api.signUpEmail({
 		body: {
 			name: "Invited User",
-			email: "invited@email.com",
+			email: "invited@example.com",
 			password: "password",
 		},
 		returnHeaders: true,
@@ -1036,7 +1036,7 @@ describe("multi team support", async () => {
 		const invitation = await auth.api.createInvitation({
 			headers: admin.headers,
 			body: {
-				email: "noteam@email.com",
+				email: "noteam@example.com",
 				role: "member",
 				organizationId,
 			},
@@ -1052,7 +1052,7 @@ describe("multi team support", async () => {
 		const userHeaders = new Headers();
 		const response = await auth.api.signUpEmail({
 			body: {
-				email: "removeteamorguser@email.com",
+				email: "removeteamorguser@example.com",
 				name: "Remove Team Org User",
 				password: "password",
 			},
@@ -1143,7 +1143,7 @@ describe("multi team support", async () => {
 	});
 
 	it("should remove a member from the organization and all their teams when calling leaveOrganization", async () => {
-		const testUserEmail = `leaveorguser${Date.now()}@email.com`;
+		const testUserEmail = `leaveorguser${Date.now()}@example.com`;
 
 		const userHeaders = new Headers();
 		const response = await auth.api.signUpEmail({

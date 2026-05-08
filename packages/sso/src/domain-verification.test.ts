@@ -24,7 +24,7 @@ vi.mock("node:dns/promises", () => {
 describe("Domain verification", async () => {
 	type TestUser = { email: string; password: string; name: string };
 	const testUser: TestUser = {
-		email: "test@email.com",
+		email: "test@example.com",
 		password: "password",
 		name: "Test User",
 	};

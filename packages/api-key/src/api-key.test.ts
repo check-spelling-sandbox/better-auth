@@ -116,7 +116,7 @@ describe("api-key", async () => {
 		expect(response.error?.status).toBe(401);
 		const newUser = await auth.api.signUpEmail({
 			body: {
-				email: "new-email@email.com",
+				email: "new-email@example.com",
 				password: "password",
 				name: "test-name",
 			},

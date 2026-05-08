@@ -27,7 +27,7 @@ const server = setupServer();
 
 beforeAll(async () => {
 	const data: GoogleProfile = {
-		email: "user@email.com",
+		email: "user@example.com",
 		email_verified: true,
 		name: "First Last",
 		picture: "https://lh3.googleusercontent.com/a-/AOh14GjQ4Z7Vw",
@@ -166,7 +166,7 @@ describe("Admin plugin", async () => {
 		const res = await client.admin.createUser(
 			{
 				name: "Test User",
-				email: "user@email.com",
+				email: "user@example.com",
 				password: "test",
 				role: "user",
 			},
@@ -182,20 +182,20 @@ describe("Admin plugin", async () => {
 		const res = await client.admin.createUser(
 			{
 				name: "Passwordless User",
-				email: "passwordless@email.com",
+				email: "passwordless@example.com",
 				role: "user",
 			},
 			{
 				headers: adminHeaders,
 			},
 		);
-		expect(res.data?.user?.email).toBe("passwordless@email.com");
+		expect(res.data?.user?.email).toBe("passwordless@example.com");
 		expect(res.data?.user?.name).toBe("Passwordless User");
 		expect(res.data?.user?.role).toBe("user");
 
 		// User should not be able to sign in with password since no credential account exists
 		const signInRes = await client.signIn.email({
-			email: "passwordless@email.com",
+			email: "passwordless@example.com",
 			password: "anypassword",
 		});
 		expect(signInRes.error).toBeDefined();

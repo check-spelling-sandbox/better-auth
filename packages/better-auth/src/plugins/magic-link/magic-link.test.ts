@@ -156,7 +156,7 @@ describe("magic link", async () => {
 	});
 
 	it("should sign up with magic link", async () => {
-		const email = "new-email@email.com";
+		const email = "new-email@example.com";
 		await client.signIn.magicLink({
 			email,
 			name: "test",
@@ -183,14 +183,14 @@ describe("magic link", async () => {
 		});
 		expect(session.data?.user).toMatchObject({
 			name: "test",
-			email: "new-email@email.com",
+			email: "new-email@example.com",
 			emailVerified: true,
 		});
 	});
 
 	it("should verify email and return emailVerified true in session for existing unverified user", async () => {
 		// Create an unverified user with a separate test instance
-		const email = "unverified-user@email.com";
+		const email = "unverified-user@example.com";
 		let magicLinkEmail: VerificationEmail = {
 			email: "",
 			token: "",

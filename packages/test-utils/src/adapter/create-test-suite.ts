@@ -462,7 +462,7 @@ export const createTestSuite = <
 						createdAt: randomDate,
 						updatedAt: new Date(),
 						email:
-							`user-${helpers.transformIdOutput?.(id) ?? id}@email.com`.toLowerCase(),
+							`user-${helpers.transformIdOutput?.(id) ?? id}@example.com`.toLowerCase(),
 						emailVerified: true,
 						name: `user-${helpers.transformIdOutput?.(id) ?? id}`,
 						image: null,

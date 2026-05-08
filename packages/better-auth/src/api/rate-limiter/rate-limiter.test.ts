@@ -68,7 +68,7 @@ describe("rate-limiter", async () => {
 		expect(signInRes.error?.status).toBe(429);
 
 		const signUpRes = await client.signUp.email({
-			email: "new-test@email.com",
+			email: "new-test@example.com",
 			password: testUser.password,
 			name: "test",
 		});

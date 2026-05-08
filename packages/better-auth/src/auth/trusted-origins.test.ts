@@ -173,7 +173,7 @@ describe("trusted origins", () => {
 			const { isTrustedOrigin } = await createAuthTestInstance();
 
 			await expect(
-				isTrustedOrigin("/dashboard?email=123@email.com", {
+				isTrustedOrigin("/dashboard?email=123@example.com", {
 					allowRelativePaths: true,
 				}),
 			).resolves.toBe(true);

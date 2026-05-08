@@ -195,7 +195,7 @@ describe("username", async () => {
 
 	it("should fail on invalid username", async () => {
 		const res = await client.signUp.email({
-			email: "email-4@email.com",
+			email: "email-4@example.com",
 			username: "new username",
 			password: "new_password",
 			name: "new-name",
@@ -206,7 +206,7 @@ describe("username", async () => {
 
 	it("should fail on too short username", async () => {
 		const res = await client.signUp.email({
-			email: "email-4@email.com",
+			email: "email-4@example.com",
 			username: "new",
 			password: "new_password",
 			name: "new-name",
@@ -217,7 +217,7 @@ describe("username", async () => {
 
 	it("should fail on empty username", async () => {
 		const res = await client.signUp.email({
-			email: "email-4@email.com",
+			email: "email-4@example.com",
 			username: "",
 			password: "new_password",
 			name: "new-name",
@@ -275,7 +275,7 @@ describe("username", async () => {
 		const headers = new Headers();
 		await client.signUp.email(
 			{
-				email: "display-test@email.com",
+				email: "display-test@example.com",
 				displayUsername: "Test Username",
 				password: "test-password",
 				name: "test-name",
@@ -300,7 +300,7 @@ describe("username", async () => {
 		const headers = new Headers();
 		await client.signUp.email(
 			{
-				email: "both-fields@email.com",
+				email: "both-fields@example.com",
 				username: "custom_user",
 				displayUsername: "Fancy Display Name",
 				password: "test-password",
@@ -334,7 +334,7 @@ describe("username", async () => {
 			},
 		);
 		await client.signUp.email({
-			email: "normalized-username@email.com",
+			email: "normalized-username@example.com",
 			username: "Custom_User",
 			password: "test-password",
 			name: "test-name",
@@ -433,7 +433,7 @@ describe("username with displayUsername validation", async () => {
 
 	it("should accept valid displayUsername", async () => {
 		const res = await client.signUp.email({
-			email: "display-valid@email.com",
+			email: "display-valid@example.com",
 			displayUsername: "Valid_Display-123",
 			password: "test-password",
 			name: "test-name",
@@ -443,7 +443,7 @@ describe("username with displayUsername validation", async () => {
 
 	it("should reject invalid displayUsername", async () => {
 		const res = await client.signUp.email({
-			email: "display-invalid@email.com",
+			email: "display-invalid@example.com",
 			displayUsername: "Invalid Display!",
 			password: "test-password",
 			name: "test-name",
@@ -458,7 +458,7 @@ describe("username with displayUsername validation", async () => {
 		const headers = new Headers();
 		await client.signUp.email(
 			{
-				email: "update-display@email.com",
+				email: "update-display@example.com",
 				displayUsername: "Initial_Name",
 				username: "initial_name",
 				password: "test-password",
@@ -500,7 +500,7 @@ describe("username with displayUsername validation", async () => {
 		const headers = new Headers();
 		await client.signUp.email(
 			{
-				email: "update-invalid@email.com",
+				email: "update-invalid@example.com",
 				displayUsername: "Valid_Name",
 				password: "test-password",
 				name: "test-name",
@@ -599,7 +599,7 @@ describe("post normalization flow", async () => {
 		});
 		const res = await auth.api.signUpEmail({
 			body: {
-				email: "test-username@email.com",
+				email: "test-username@example.com",
 				username: "Test Username",
 				password: "test-password",
 				name: "test-name",

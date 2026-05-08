@@ -90,7 +90,7 @@ describe("run time proxy", async () => {
 						JSON.stringify({
 							user: {
 								id: 1,
-								email: "test@email.com",
+								email: "test@example.com",
 							},
 						}),
 					);
@@ -101,7 +101,7 @@ describe("run time proxy", async () => {
 		const res = client.useSession();
 		await vi.runAllTimersAsync();
 		expect(res()).toMatchObject({
-			data: { user: { id: 1, email: "test@email.com" } },
+			data: { user: { id: 1, email: "test@example.com" } },
 			error: null,
 			isPending: false,
 		});
@@ -290,7 +290,7 @@ describe("type", () => {
 		}>();
 
 		const request: SignInMagicLinkInput = {
-			email: "test@email.com",
+			email: "test@example.com",
 			metadata: {
 				inviteId: "123",
 			},

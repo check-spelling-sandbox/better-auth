@@ -417,7 +417,7 @@ describe("Email Verification Secondary Storage", async () => {
 		await runWithUser(async (headers) => {
 			await auth.api.changeEmail({
 				body: {
-					newEmail: "new@email.com",
+					newEmail: "new@example.com",
 				},
 				headers,
 			});
@@ -459,7 +459,7 @@ describe("Email Verification Secondary Storage", async () => {
 					headers: verificationHeaders,
 				},
 			});
-			expect(session.data?.user.email).toBe("new@email.com");
+			expect(session.data?.user.email).toBe("new@example.com");
 			expect(session.data?.user.emailVerified).toBe(true);
 		});
 	});

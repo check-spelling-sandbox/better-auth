@@ -232,7 +232,7 @@ describe("call", async () => {
 						context: {
 							body: {
 								...ctx.body,
-								email: "changed@email.com",
+								email: "changed@example.com",
 							},
 						},
 					};
@@ -462,7 +462,7 @@ describe("call", async () => {
 				Authorization: `Bearer ${response?.token}`,
 			}),
 		});
-		expect(session?.user.email).toBe("changed@email.com");
+		expect(session?.user.email).toBe("changed@example.com");
 	});
 
 	it("should fetch using a client", async () => {

@@ -142,7 +142,7 @@ describe("internal adapter test", async () => {
 	it("should create oauth user with custom generate id", async () => {
 		const user = await internalAdapter.createOAuthUser(
 			{
-				email: "email@email.com",
+				email: "email@example.com",
 				name: "name",
 				emailVerified: false,
 			},
@@ -159,7 +159,7 @@ describe("internal adapter test", async () => {
 			user: {
 				id: "1",
 				name: "name",
-				email: "email@email.com",
+				email: "email@example.com",
 				emailVerified: false,
 				image: null,
 				createdAt: expect.any(Date),
@@ -608,7 +608,7 @@ describe("internal adapter test", async () => {
 		const expiresAt = new Date(now + 60 * 60 * 24 * 7 * 1000);
 		const user = await internalAdapter.createUser({
 			name: "test-user",
-			email: "test@email.com",
+			email: "test@example.com",
 		});
 		const session = await internalAdapter.createSession(user.id);
 
@@ -782,7 +782,7 @@ describe("internal adapter test", async () => {
 
 		const user = await testInternalAdapter.createUser({
 			name: "test-user-skip",
-			email: "test-skip@email.com",
+			email: "test-skip@example.com",
 		});
 
 		// Create 3 sessions
@@ -830,7 +830,7 @@ describe("internal adapter test", async () => {
 
 		const user = await testInternalAdapter.createUser({
 			name: "test-user-malformed",
-			email: "test-malformed@email.com",
+			email: "test-malformed@example.com",
 		});
 
 		// Create 3 sessions
@@ -874,7 +874,7 @@ describe("internal adapter test", async () => {
 
 		const user = await testInternalAdapter.createUser({
 			name: "test-user-corrupt",
-			email: "test-corrupt@email.com",
+			email: "test-corrupt@example.com",
 		});
 
 		// Create 3 sessions
@@ -917,7 +917,7 @@ describe("internal adapter test", async () => {
 
 		const user = await testInternalAdapter.createUser({
 			name: "test-user-all-corrupt",
-			email: "test-all-corrupt@email.com",
+			email: "test-all-corrupt@example.com",
 		});
 
 		// Create 2 sessions
@@ -958,7 +958,7 @@ describe("internal adapter test", async () => {
 
 		const user = await testInternalAdapter.createUser({
 			name: "test-user-find",
-			email: "test-find@email.com",
+			email: "test-find@example.com",
 		});
 
 		// Create 3 sessions
@@ -1013,7 +1013,7 @@ describe("internal adapter test", async () => {
 		// Create a user first
 		const user = await testInternalAdapter.createUser({
 			name: "test-user-update",
-			email: "test-update@email.com",
+			email: "test-update@example.com",
 		});
 
 		// Create a session

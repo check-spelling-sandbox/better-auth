@@ -154,7 +154,7 @@ describe("email-otp", async () => {
 
 	it("should send verification otp on sign-up", async () => {
 		const testUser2 = {
-			email: "test8@email.com",
+			email: "test8@example.com",
 			password: "password",
 			name: "test",
 		};
@@ -338,13 +338,13 @@ describe("email-otp", async () => {
 		otp = await auth.api.createVerificationOTP({
 			body: {
 				type: "sign-in",
-				email: "test@email.com",
+				email: "test@example.com",
 			},
 		});
 		otp = await auth.api.createVerificationOTP({
 			body: {
 				type: "sign-in",
-				email: "test@email.com",
+				email: "test@example.com",
 			},
 		});
 		expect(otp.length).toBe(6);
@@ -353,7 +353,7 @@ describe("email-otp", async () => {
 	it("should get verification otp on server", async () => {
 		await auth.api.getVerificationOTP({
 			query: {
-				email: "test@email.com",
+				email: "test@example.com",
 				type: "sign-in",
 			},
 		});
@@ -1169,21 +1169,21 @@ describe("custom rate limiting storage", async () => {
 		{
 			path: "/email-otp/send-verification-otp",
 			body: {
-				email: "test@email.com",
+				email: "test@example.com",
 				type: "sign-in",
 			},
 		},
 		{
 			path: "/sign-in/email-otp",
 			body: {
-				email: "test@email.com",
+				email: "test@example.com",
 				otp: "12312",
 			},
 		},
 		{
 			path: "/email-otp/verify-email",
 			body: {
-				email: "test@email.com",
+				email: "test@example.com",
 				otp: "12312",
 			},
 		},
@@ -1294,7 +1294,7 @@ describe("custom storeOTP", async () => {
 			},
 		);
 		const authCtx = await auth.$context;
-		const userEmail1 = `${crypto.randomUUID()}@email.com`;
+		const userEmail1 = `${crypto.randomUUID()}@example.com`;
 
 		let validOTP = "";
 
@@ -1388,7 +1388,7 @@ describe("custom storeOTP", async () => {
 			},
 		);
 		const authCtx = await auth.$context;
-		const userEmail1 = `${crypto.randomUUID()}@email.com`;
+		const userEmail1 = `${crypto.randomUUID()}@example.com`;
 
 		let validOTP = "";
 
@@ -1484,7 +1484,7 @@ describe("custom storeOTP", async () => {
 		const authCtx = await auth.$context;
 
 		let validOTP = "";
-		const userEmail1 = `${crypto.randomUUID()}@email.com`;
+		const userEmail1 = `${crypto.randomUUID()}@example.com`;
 
 		it("should create a custom encryptor otp", async () => {
 			const { get } = getTheSentOTP();
@@ -1574,7 +1574,7 @@ describe("custom storeOTP", async () => {
 		const authCtx = await auth.$context;
 
 		let validOTP = "";
-		const userEmail1 = `${crypto.randomUUID()}@email.com`;
+		const userEmail1 = `${crypto.randomUUID()}@example.com`;
 
 		it("should create a custom hasher otp", async () => {
 			const { get } = getTheSentOTP();
@@ -1653,7 +1653,7 @@ describe("override default email verification", async () => {
 	it("should send verification email on sign up", async () => {
 		await client.signUp.email(
 			{
-				email: "test-otp-override@email.com",
+				email: "test-otp-override@example.com",
 				password: "password",
 				name: "Test User",
 			},
@@ -1666,7 +1666,7 @@ describe("override default email verification", async () => {
 
 	it("should verify email with otp", async () => {
 		const res = await client.emailOtp.verifyEmail({
-			email: "test-otp-override@email.com",
+			email: "test-otp-override@example.com",
 			otp,
 		});
 		expect(res.data?.status).toBe(true);
@@ -1695,7 +1695,7 @@ describe("override default email verification", async () => {
 		});
 		await client.signUp.email(
 			{
-				email: "test-otp-override@email.com",
+				email: "test-otp-override@example.com",
 				password: "password",
 				name: "Test User",
 			},
@@ -1709,7 +1709,7 @@ describe("override default email verification", async () => {
 	it("should send email only once when override is enabled", async () => {
 		let callCountForTestEmail = 0;
 		const sendVerificationOTPFn = vi.fn(async (data, request) => {
-			if (data.email === "test-no-duplicate@email.com") {
+			if (data.email === "test-no-duplicate@example.com") {
 				callCountForTestEmail++;
 			}
 		});
@@ -1733,7 +1733,7 @@ describe("override default email verification", async () => {
 		sendVerificationOTPFn.mockClear();
 
 		await client.signUp.email({
-			email: "test-no-duplicate@email.com",
+			email: "test-no-duplicate@example.com",
 			password: "password",
 			name: "Test User",
 		});
@@ -1742,7 +1742,7 @@ describe("override default email verification", async () => {
 		expect(sendVerificationOTPFn).toHaveBeenCalledTimes(1);
 		expect(sendVerificationOTPFn).toHaveBeenCalledWith(
 			expect.objectContaining({
-				email: "test-no-duplicate@email.com",
+				email: "test-no-duplicate@example.com",
 				type: "email-verification",
 			}),
 			expect.any(Object),
@@ -1779,13 +1779,13 @@ describe("override default email verification", async () => {
 		);
 
 		await client.signUp.email({
-			email: "test-hook@email.com",
+			email: "test-hook@example.com",
 			password: "password",
 			name: "Test User",
 		});
 
 		const res = await client.emailOtp.verifyEmail({
-			email: "test-hook@email.com",
+			email: "test-hook@example.com",
 			otp,
 		});
 
@@ -1793,7 +1793,7 @@ describe("override default email verification", async () => {
 		expect(afterEmailVerification).toHaveBeenCalledTimes(1);
 		expect(afterEmailVerification).toHaveBeenCalledWith(
 			expect.objectContaining({
-				email: "test-hook@email.com",
+				email: "test-hook@example.com",
 				emailVerified: true,
 			}),
 			expect.any(Object),

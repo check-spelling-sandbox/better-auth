@@ -11,7 +11,7 @@ import type { SCIMOptions } from "./types";
 
 const createTestInstance = (scimOptions?: SCIMOptions) => {
 	const testUser = {
-		email: "test@email.com",
+		email: "test@example.com",
 		password: "password",
 		name: "Test User",
 	};

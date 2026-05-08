@@ -352,7 +352,7 @@ const createTemplateCallback =
 			AuthnStatement: "",
 			attrFirstName: "Test",
 			attrLastName: "User",
-			attrEmail: "test@email.com",
+			attrEmail: "test@example.com",
 		};
 
 		return {
@@ -487,7 +487,7 @@ const createMockSAMLIdP = (port: number, options: MockIdPOptions = {}) => {
 
 			const emailCase = req.query.emailCase as string;
 			const emailValue =
-				emailCase === "mixed" ? "TestUser@Example.com" : "test@email.com";
+				emailCase === "mixed" ? "TestUser@Example.com" : "test@example.com";
 			const user = {
 				email: emailValue,
 				emailAddress: emailValue,
@@ -1044,7 +1044,7 @@ describe("SAML SSO", async () => {
 	});
 
 	const testUser = {
-		email: "test@email.com",
+		email: "test@example.com",
 		password: "password",
 		name: "Test User",
 	};
@@ -1775,7 +1775,7 @@ describe("SAML SSO", async () => {
 		});
 
 		// Identity Provider-initiated: Get SAML response directly from IdP
-		// The mock IdP will return test@email.com, which doesn't exist in the DB
+		// The mock IdP will return test@example.com, which doesn't exist in the DB
 		let samlResponse: any;
 		await betterFetch("http://localhost:8081/api/sso/saml2/idp/post", {
 			onSuccess: async (context) => {
@@ -1908,7 +1908,7 @@ describe("SAML SSO", async () => {
 			model: "user",
 			data: {
 				id: "existing-user-id",
-				email: "test@email.com",
+				email: "test@example.com",
 				name: "Existing User",
 				emailVerified: true,
 				createdAt: new Date(),
@@ -1988,7 +1988,7 @@ describe("SAML SSO", async () => {
 			model: "user",
 			data: {
 				id: "existing-user-id-2",
-				email: "test@email.com",
+				email: "test@example.com",
 				name: "Existing User",
 				emailVerified: true,
 				createdAt: new Date(),
@@ -2716,7 +2716,7 @@ describe("SAML SSO with custom fields", () => {
 	});
 
 	const testUser = {
-		email: "test@email.com",
+		email: "test@example.com",
 		password: "password",
 		name: "Test User",
 	};
@@ -5356,7 +5356,7 @@ describe("SAML Single Logout (SLO)", () => {
 			const logoutRequest = idp.createLogoutRequest(
 				sp,
 				saml.Constants.wording.binding.redirect,
-				{ nameID: "test@email.com" },
+				{ nameID: "test@example.com" },
 				"http://localhost:8081/after-logout",
 			) as { context: string };
 

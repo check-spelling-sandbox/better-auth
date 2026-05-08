@@ -51,7 +51,7 @@ const aiPromptText = `Set up authentication in my project using Better Auth (bet
 Refer to better-auth.com/docs for exact API and plugin syntax.`;
 
 function CredentialFields() {
-	const emailText = "user@email.com";
+	const emailText = "user@example.com";
 	const passwordDots = "••••••••";
 	const [emailDisplay, setEmailDisplay] = useState(emailText);
 	const [passwordDisplay, setPasswordDisplay] = useState(passwordDots);

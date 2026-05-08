@@ -24,7 +24,7 @@ const server = setupServer();
 
 beforeAll(async () => {
 	const data: GoogleProfile = {
-		email: "user@email.com",
+		email: "user@example.com",
 		email_verified: true,
 		name: "First Last",
 		picture: "https://lh3.googleusercontent.com/a-/AOh14GjQ4Z7Vw",

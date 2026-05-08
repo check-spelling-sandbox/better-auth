@@ -112,7 +112,7 @@ Use the `changeEmail` function on the client to initiate the process.
 import { authClient } from "@/lib/auth-client"
 
 await authClient.changeEmail({
-    newEmail: "new-email@email.com",
+    newEmail: "new-email@example.com",
     callbackURL: "/dashboard", // to redirect after verification
 });
 ```
