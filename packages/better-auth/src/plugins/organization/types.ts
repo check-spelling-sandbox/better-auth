@@ -250,7 +250,7 @@ export interface OrganizationOptions {
 					 */
 					email: string;
 					/**
-					 * the organization the user is invited to join
+					 * the organization to which the user is invited to join
 					 */
 					organization: Organization;
 					/**

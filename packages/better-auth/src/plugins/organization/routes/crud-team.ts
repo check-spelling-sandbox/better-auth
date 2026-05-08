@@ -66,7 +66,7 @@ export const createTeam = <O extends OrganizationOptions>(options: O) => {
 											organizationId: {
 												type: "string",
 												description:
-													"ID of the organization the team belongs to",
+													"ID of the organization to which the team belongs",
 											},
 											createdAt: {
 												type: "string",
@@ -413,7 +413,7 @@ export const updateTeam = <O extends OrganizationOptions>(options: O) => {
 											organizationId: {
 												type: "string",
 												description:
-													"ID of the organization the team belongs to",
+													"ID of the organization to which the team belongs",
 											},
 											createdAt: {
 												type: "string",
@@ -598,7 +598,7 @@ export const listOrganizationTeams = <O extends OrganizationOptions>(
 												organizationId: {
 													type: "string",
 													description:
-														"ID of the organization the team belongs to",
+														"ID of the organization to which the team belongs",
 												},
 												createdAt: {
 													type: "string",
