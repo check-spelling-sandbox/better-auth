@@ -781,7 +781,7 @@ describe("SAML SSO with signed AuthnRequests", async () => {
 		expect(relayStateIdx).toBeLessThan(signatureIdx);
 	});
 
-	it("should produce a signature the IdP can verify", async () => {
+	it("should produce a signature that the IdP can verify", async () => {
 		const signInResponse = await auth.api.signInSSO({
 			body: {
 				providerId: "signed-saml",
