@@ -2,7 +2,7 @@
 
 This is an example of how to use Better Auth with Electron.
 
-## Prerequirements
+## Prerequisites
 
 Make sure you've set-up the [Better Auth Demo App](../nextjs/README.md).
 
