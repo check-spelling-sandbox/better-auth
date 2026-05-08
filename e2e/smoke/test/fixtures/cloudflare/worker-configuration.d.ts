@@ -6770,7 +6770,7 @@ interface IncomingRequestCfPropertiesGeographicInformation {
 	 */
 	isEUCountry?: "1";
 	/**
-	 * A two-letter code indicating the continent the request originated from.
+	 * A two-letter code indicating the originating continent for the request.
 	 *
 	 * @example "AN"
 	 */
