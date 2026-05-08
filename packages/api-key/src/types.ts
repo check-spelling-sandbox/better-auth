@@ -226,7 +226,7 @@ export interface ApiKeyConfigurationOptions {
 	 */
 	storage?: "database" | "secondary-storage" | undefined;
 	/**
-	 * When `storage` is `"secondary-storage"`, enable fallback to database if key is not found in secondary storage.
+	 * When `storage` is `"secondary-storage"`, enable falling back to database if key is not found in secondary storage.
 	 *
 	 * Useful for gradual migration from database to secondary storage.
 	 *

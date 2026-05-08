@@ -945,7 +945,7 @@ describe("SAML SSO with idpMetadata but without metadata XML (fall back to top-l
 					// The fix ensures signingCert is used (not encryptCert) and entryPoint/issuer fallbacks work
 					idpMetadata: {
 						// No metadata XML provided
-						// cert could be provided here, but we test fallback to top-level cert
+						// cert could be provided here, but we test falling back to top-level cert
 						entityID: "http://localhost:8081/custom-entity-id",
 					},
 					identifierFormat:

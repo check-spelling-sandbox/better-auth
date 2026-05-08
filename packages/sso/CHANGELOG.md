@@ -77,7 +77,7 @@
   - Fix `acsEndpoint` skipping DB provider lookup when `defaultSSO` is configured
   - Fix `acsEndpoint` missing encryption fields (`isAssertionEncrypted`, `encPrivateKey`), which caused silent decryption failures
   - Fix `defaultSSO` config parsing in callback path (`safeJsonParse` on already-parsed objects)
-  - Fix `createSP` missing `callbackUrl` fallback to auto-generated ACS URL
+  - Fix `createSP` missing `callbackUrl` falling back to auto-generated ACS URL
   - Complete `createSP`/`createIdP` helpers with all encryption and signing fields
 
   **Behavioral changes:**
