@@ -923,7 +923,7 @@ const addTeamMemberBodySchema = z.object({
 
 	userId: z.coerce.string().meta({
 		description:
-			"The user Id which represents the user to be added as a member.",
+			"The user ID which represents the user to be added as a member.",
 	}),
 
 	organizationId: z

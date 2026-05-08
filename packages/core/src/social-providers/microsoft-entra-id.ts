@@ -155,7 +155,7 @@ export const microsoft = (options: MicrosoftOptions) => {
 			// See https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow
 			if (!getPrimaryClientId(options.clientId)) {
 				logger.error(
-					"Client Id is required for Microsoft Entra ID. Make sure to provide it in the options.",
+					"Client ID is required for Microsoft Entra ID. Make sure to provide it in the options.",
 				);
 				throw new BetterAuthError("CLIENT_ID_AND_SECRET_REQUIRED");
 			}

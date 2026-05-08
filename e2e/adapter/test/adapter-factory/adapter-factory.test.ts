@@ -374,7 +374,7 @@ describe("Create Adapter Helper", async () => {
 					model: "user",
 					data: { name: "test-name" },
 				});
-				// Id will still be present, due to the transformOutput function. However it will be undefined, vvvvv
+				// ID will still be present, due to the transformOutput function. However it will be undefined, vvvvv
 				expect(res2).toHaveProperty("id");
 				expect(typeof res2?.id).toEqual("undefined");
 				// In a real case, the `id` should always be present

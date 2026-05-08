@@ -37,7 +37,7 @@ export const atlassian = (options: AtlassianOptions) => {
 
 		async createAuthorizationURL({ state, scopes, codeVerifier, redirectURI }) {
 			if (!options.clientId || !options.clientSecret) {
-				logger.error("Client Id and Secret are required for Atlassian");
+				logger.error("Client ID and Secret are required for Atlassian");
 				throw new BetterAuthError("CLIENT_ID_AND_SECRET_REQUIRED");
 			}
 			if (!codeVerifier) {

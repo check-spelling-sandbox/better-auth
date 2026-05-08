@@ -67,7 +67,7 @@ export const salesforce = (options: SalesforceOptions) => {
 		async createAuthorizationURL({ state, scopes, codeVerifier, redirectURI }) {
 			if (!options.clientId || !options.clientSecret) {
 				logger.error(
-					"Client Id and Client Secret are required for Salesforce. Make sure to provide them in the options.",
+					"Client ID and Client Secret are required for Salesforce. Make sure to provide them in the options.",
 				);
 				throw new BetterAuthError("CLIENT_ID_AND_SECRET_REQUIRED");
 			}

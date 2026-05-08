@@ -226,7 +226,7 @@ describe("passkey", async () => {
 			body: {
 				email: "invalid-user-id@example.com",
 				password: "test123456",
-				name: "Invalid User Id Test",
+				name: "Invalid User ID Test",
 			},
 		});
 		resolvedUserId = signUp.user.id;

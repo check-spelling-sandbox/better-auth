@@ -1010,7 +1010,7 @@ export interface OAuthOpaqueAccessToken<
 	 */
 	userId?: string;
 	/**
-	 * Reference Id of the consent/authorization.
+	 * Reference ID of the consent/authorization.
 	 *
 	 * Not available in client credentials grant
 	 * where no user is involved.

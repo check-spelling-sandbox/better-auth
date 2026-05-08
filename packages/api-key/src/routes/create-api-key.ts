@@ -97,14 +97,14 @@ const createApiKeyBodySchema = z.object({
 		.string()
 		.meta({
 			description:
-				'User Id of the user that the Api Key belongs to. server-only. Eg: "user-id"',
+				'User ID of the user that the Api Key belongs to. server-only. Eg: "user-id"',
 		})
 		.optional(),
 	organizationId: z.coerce
 		.string()
 		.meta({
 			description:
-				"Organization Id of the organization that the Api Key belongs to. Eg: 'org-id'",
+				"Organization ID of the organization that the Api Key belongs to. Eg: 'org-id'",
 		})
 		.optional(),
 });

@@ -8459,7 +8459,7 @@ declare abstract class Vectorize {
 	): Promise<VectorizeMatches>;
 	/**
 	 * Use the provided vector-id to perform a similarity search across the index.
-	 * @param vectorId Id for a vector in the index against which the index should be queried.
+	 * @param vectorId ID for a vector in the index against which the index should be queried.
 	 * @param options Configuration options to massage the returned data.
 	 * @returns A promise that resolves with matched and scored vectors.
 	 */
@@ -8554,7 +8554,7 @@ declare module "cloudflare:workflows" {
 declare abstract class Workflow<PARAMS = unknown> {
 	/**
 	 * Get a handle to an existing instance of the Workflow.
-	 * @param id Id for the instance of this Workflow
+	 * @param id ID for the instance of this Workflow
 	 * @returns A promise that resolves with a handle for the Instance
 	 */
 	public get(id: string): Promise<WorkflowInstance>;

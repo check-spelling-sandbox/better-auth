@@ -235,7 +235,7 @@ describe("oauth logout", async () => {
 		expect(tokens.data?.refresh_token).toBeDefined();
 		expect(tokens.data?.scope).toBe(scopes.join(" "));
 
-		// Id token should not have a sid claim
+		// ID token should not have a sid claim
 		const idToken = decodeJwt(tokens.data?.id_token!);
 		expect(idToken.sid).toBeUndefined();
 
@@ -273,7 +273,7 @@ describe("oauth logout", async () => {
 		expect(tokens.data?.refresh_token).toBeDefined();
 		expect(tokens.data?.scope).toBe(scopes.join(" "));
 
-		// Id token should have a sid claim
+		// ID token should have a sid claim
 		const idToken = decodeJwt(tokens.data?.id_token!);
 		const sessionId = idToken.sid;
 		expect(sessionId).toBeDefined();
@@ -353,7 +353,7 @@ describe("oauth logout", async () => {
 		expect(tokens.data?.refresh_token).toBeDefined();
 		expect(tokens.data?.scope).toBe(scopes.join(" "));
 
-		// Id token should have a sid claim
+		// ID token should have a sid claim
 		const idToken = decodeJwt(tokens.data?.id_token!);
 		const sessionId = idToken.sid;
 		expect(sessionId).toBeDefined();
@@ -545,7 +545,7 @@ describe("oauth logout - disableJwtPlugin", async () => {
 		expect(tokens.data?.refresh_token).toBeDefined();
 		expect(tokens.data?.scope).toBe(scopes.join(" "));
 
-		// Id token should have a sid claim
+		// ID token should have a sid claim
 		const idToken = decodeJwt(tokens.data?.id_token!);
 		const sessionId = idToken.sid;
 		expect(sessionId).toBeDefined();
@@ -625,7 +625,7 @@ describe("oauth logout - disableJwtPlugin", async () => {
 		expect(tokens.data?.refresh_token).toBeDefined();
 		expect(tokens.data?.scope).toBe(scopes.join(" "));
 
-		// Id token should have a sid claim
+		// ID token should have a sid claim
 		const idToken = decodeJwt(tokens.data?.id_token!);
 		const sessionId = idToken.sid;
 		expect(sessionId).toBeDefined();

@@ -182,7 +182,7 @@ export interface Subscription {
 	 */
 	trialEnd?: Date | undefined;
 	/**
-	 * Price Id for the subscription
+	 * Price ID for the subscription
 	 */
 	priceId?: string | undefined;
 	/**

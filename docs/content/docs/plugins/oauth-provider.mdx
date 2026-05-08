@@ -1001,7 +1001,7 @@ oauthProvider({
 
 Internally, we support the following claims are supported: \["sub", "iss", "aud", "exp", "iat", "sid", "scope", "azp"].
 
-Id token and user info claims should be namespaced when possible to avoid potential future conflicts.
+ID token and user info claims should be namespaced when possible to avoid potential future conflicts.
 
 Claims added inside `customIdTokenClaims` and `customUserInfoClaims` should be added to the `advertisedMetadata.claims_supported` so clients can validate that claim received. In the following example, it would be the base claims plus `locale` and `https://example.com/org`.
 

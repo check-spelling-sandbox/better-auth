@@ -67,7 +67,7 @@ export const google = (options: GoogleOptions) => {
 		}) {
 			if (!getPrimaryClientId(options.clientId) || !options.clientSecret) {
 				logger.error(
-					"Client Id and Client Secret is required for Google. Make sure to provide them in the options.",
+					"Client ID and Client Secret is required for Google. Make sure to provide them in the options.",
 				);
 				throw new BetterAuthError("CLIENT_ID_AND_SECRET_REQUIRED");
 			}
