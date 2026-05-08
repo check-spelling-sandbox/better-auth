@@ -743,7 +743,7 @@ export interface OAuthAuthorizationQuery {
 	 */
 	redirect_uri: string;
 	/**
-	 * The scope of the request. Must be a space-separated list of case sensitive strings.
+	 * The scope of the request. Must be a space-separated list of case-sensitive strings.
 	 *
 	 * - "openid" is required for most requests to obtain user id (ie sub)
 	 * - "profile" is required for requests that require user profile information.
