@@ -382,7 +382,7 @@ declare const self: ServiceWorkerGlobalScope;
  */
 declare const crypto: Crypto;
 /**
- * The Cache API allows fine grained control of reading and writing from the Cloudflare global network cache.
+ * The Cache API allows fine-grained control of reading and writing from the Cloudflare global network cache.
  *
  * [Cloudflare Docs Reference](https://developers.cloudflare.com/workers/runtime-apis/cache/)
  */
@@ -1010,7 +1010,7 @@ interface FileOptions {
 	lastModified?: number;
 }
 /**
- * The Cache API allows fine grained control of reading and writing from the Cloudflare global network cache.
+ * The Cache API allows fine-grained control of reading and writing from the Cloudflare global network cache.
  *
  * [Cloudflare Docs Reference](https://developers.cloudflare.com/workers/runtime-apis/cache/)
  */
@@ -1020,7 +1020,7 @@ declare abstract class CacheStorage {
 	readonly default: Cache;
 }
 /**
- * The Cache API allows fine grained control of reading and writing from the Cloudflare global network cache.
+ * The Cache API allows fine-grained control of reading and writing from the Cloudflare global network cache.
  *
  * [Cloudflare Docs Reference](https://developers.cloudflare.com/workers/runtime-apis/cache/)
  */
