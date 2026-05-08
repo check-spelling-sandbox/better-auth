@@ -443,7 +443,7 @@ This will redirect the user to the Stripe Billing Portal where they can cancel t
   | `cancelAtPeriodEnd` | Whether this subscription will (if status=active) or did (if status=canceled) cancel at the end of the current billing period. |
   | `cancelAt`          | If the subscription is scheduled to be canceled, this is the time at which the cancellation will take effect.                  |
   | `canceledAt`        | If the subscription has been canceled, this is the time when it was canceled.                                                  |
-  | `endedAt`           | If the subscription has ended, the date the subscription ended.                                                                |
+  | `endedAt`           | If the subscription has ended, the date it ended.                                                                              |
   | `status`            | Changes to "canceled" only after the subscription has actually ended.                                                          |
 </Callout>
 
@@ -774,7 +774,7 @@ export const stripeSubscriptionTableFields = [
 		name: "endedAt",
 		type: "Date",
 		description:
-			"If the subscription has ended, this is the date the subscription ended",
+			"If the subscription has ended, this is the date it ended",
 		isOptional: true,
 	},
 	{
