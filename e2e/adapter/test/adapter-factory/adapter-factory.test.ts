@@ -1764,7 +1764,7 @@ describe("Fallback JoinOption System", async () => {
 				},
 				options: {
 					experimental: {
-						// explicitally defining since in the future `join` will likely be default which would break this test
+						// explicitly defining since in the future `join` will likely be default which would break this test
 						joins: false,
 					},
 				},
@@ -1829,7 +1829,7 @@ describe("Fallback JoinOption System", async () => {
 				},
 				options: {
 					experimental: {
-						// explicitally defining since in the future `join` will likely be default which would break this test
+						// explicitly defining since in the future `join` will likely be default which would break this test
 						joins: false,
 					},
 				},
@@ -1910,7 +1910,7 @@ describe("Fallback JoinOption System", async () => {
 				},
 				options: {
 					experimental: {
-						// explicitally defining since in the future `join` will likely be default which would break this test
+						// explicitly defining since in the future `join` will likely be default which would break this test
 						joins: false,
 					},
 				},
@@ -1949,7 +1949,7 @@ describe("Fallback JoinOption System", async () => {
 				},
 				options: {
 					experimental: {
-						// explicitally defining since in the future `join` will likely be default which would break this test
+						// explicitly defining since in the future `join` will likely be default which would break this test
 						joins: false,
 					},
 				},
