@@ -120,7 +120,7 @@ describe("get-full-organization", async () => {
 	it("should throw BAD_REQUEST when organization doesn't exist", async () => {
 		const result = await client.organization.getFullOrganization({
 			query: {
-				organizationId: "non-existent-org-id",
+				organizationId: "nonexistent-org-id",
 			},
 			fetchOptions: {
 				headers,

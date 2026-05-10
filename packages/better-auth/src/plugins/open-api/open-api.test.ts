@@ -242,7 +242,7 @@ describe("open-api", async () => {
 			expect(properties[fieldName]).toBeDefined();
 			const fieldSchema = properties[fieldName];
 
-			// Check type is correctly inferred - not fallback to "string"
+			// Check type is correctly inferred - not falling back to "string"
 			const baseTypes = getBaseType(fieldSchema.type);
 			expect(baseTypes).toContain(expectedType);
 			expect(baseTypes).not.toContain("string");

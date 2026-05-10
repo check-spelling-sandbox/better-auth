@@ -120,7 +120,7 @@ export interface JwtOptions {
 	/**
 	 * Disables setting JWTs through middleware.
 	 *
-	 * Recommended to set `true` when using an oAuth provider plugin
+	 * Recommended to set `true` when using an OAuth provider plugin
 	 * like OIDC or MCP where session payloads should not be signed.
 	 *
 	 * @default false

@@ -382,7 +382,7 @@ export const generateDrizzleSchema: SchemaGenerator = async ({
 
 		// Add relations, deduplicating by relationKey
 		for (const { modelName, hasMany } of modelRelationsMap.values()) {
-			// Determine relation type: if all are unique, it's "one", otherwise "many"
+			// Determine relation type: if all are unique, it's "one"; otherwise, "many"
 			const relationType = hasMany ? "many" : "one";
 			let relationKey = getModelName(modelName);
 

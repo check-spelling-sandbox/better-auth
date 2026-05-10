@@ -646,7 +646,7 @@ export async function initAction(opts: any) {
 		}
 
 		// Determine default auth config path based on project structure
-		// Priority: src/lib/ if src/ exists, otherwise lib/
+		// Priority: src/lib/ if src/ exists; otherwise, lib/
 		const hasSrc = allFiles.some((node) => node === "src");
 
 		let defaultAuthConfigPath: string;
@@ -1388,7 +1388,7 @@ export const auth = betterAuth({
 		}
 
 		// Determine default auth-client config path based on project structure
-		// Priority: src/lib/ if src/ exists, otherwise lib/
+		// Priority: src/lib/ if src/ exists; otherwise, lib/
 		const hasSrc = allFiles.some((node) => node === "src");
 
 		let defaultAuthClientPath: string;

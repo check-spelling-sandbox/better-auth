@@ -448,7 +448,7 @@ export const auth = betterAuth({
 #### `"secondary-storage"`
 
 Store API keys only in secondary storage (e.g., Redis).
-No fallback to database. Best for high-performance scenarios where all keys are migrated to secondary storage.
+No falling back to database. Best for high-performance scenarios where all keys are migrated to secondary storage.
 
 ```ts title="auth.ts"
 import { createClient } from "redis";
@@ -477,7 +477,7 @@ export const auth = betterAuth({
 
 #### Secondary Storage with Fallback
 
-Check secondary storage first, then fallback to database if not found.
+Check secondary storage first, then fall back to database if not found.
 
 **Read behavior:**
 

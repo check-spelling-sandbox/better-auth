@@ -79,7 +79,7 @@ export const initGetIdField = ({
 								return customIdGenerator({ model });
 							}
 
-							// fallback to default id generation
+							// fall back to default id generation
 							return defaultGenerateId();
 						},
 					}
@@ -97,7 +97,7 @@ export const initGetIdField = ({
 
 					if (useNumberId) {
 						const numberValue = Number(value);
-						// if invalid number, fallback to DB generated number id.
+						// if invalid number, fall back to DB generated number id.
 						if (isNaN(numberValue)) {
 							return undefined;
 						}
@@ -129,7 +129,7 @@ export const initGetIdField = ({
 						}
 						// if DB will handle UUID generation, then we should return undefined.
 						if (supportsUUIDs) return undefined;
-						// if the value is not a string, and the database doesn't support generating it's own UUIDs, then we should be generating the UUID.
+						// if the value is not a string, and the database doesn't support generating its own UUIDs, then we should be generating the UUID.
 						if (typeof value !== "string" && !supportsUUIDs) {
 							return crypto.randomUUID();
 						}

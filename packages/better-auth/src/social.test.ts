@@ -33,7 +33,7 @@ beforeAll(async () => {
 	const serverEndpoint = async () => {
 		const data: GoogleProfile = shouldUseUpdatedProfile
 			? {
-					email: "user@email.com",
+					email: "user@example.com",
 					email_verified: true,
 					name: "Updated User",
 					picture: "https://test.com/picture.png",
@@ -50,7 +50,7 @@ beforeAll(async () => {
 					family_name: "User",
 				}
 			: {
-					email: "user@email.com",
+					email: "user@example.com",
 					email_verified: true,
 					name: "First Last",
 					picture: "https://lh3.googleusercontent.com/a-/AOh14GjQ4Z7Vw",
@@ -78,7 +78,7 @@ beforeAll(async () => {
 		http.post("https://appleid.apple.com/auth/token", serverEndpoint),
 		http.post(`http://localhost:${port}/token`, async () => {
 			const data: GoogleProfile = {
-				email: "user@email.com",
+				email: "user@example.com",
 				email_verified: true,
 				name: "First Last",
 				picture: "https://lh3.googleusercontent.com/a-/AOh14GjQ4Z7Vw",

@@ -168,7 +168,7 @@ export interface OrganizationOptions {
 			  }) => Awaitable<number>)
 			| undefined;
 		/**
-		 * By default, if an organization does only have one team, they'll not be able to remove it.
+		 * By default, if an organization only has one team, they won't be able to remove it.
 		 *
 		 * You can disable this behavior by setting this to `false.
 		 *
@@ -250,7 +250,7 @@ export interface OrganizationOptions {
 					 */
 					email: string;
 					/**
-					 * the organization the user is invited to join
+					 * the organization to which the user is invited to join
 					 */
 					organization: Organization;
 					/**

@@ -182,7 +182,7 @@ export interface Subscription {
 	 */
 	trialEnd?: Date | undefined;
 	/**
-	 * Price Id for the subscription
+	 * Price ID for the subscription
 	 */
 	priceId?: string | undefined;
 	/**
@@ -233,7 +233,7 @@ export interface Subscription {
 	 */
 	canceledAt?: Date | undefined;
 	/**
-	 * If the subscription has ended, the date the subscription ended.
+	 * If the subscription has ended, the date it ended.
 	 */
 	endedAt?: Date | undefined;
 	/**

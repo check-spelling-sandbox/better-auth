@@ -99,7 +99,7 @@ describe("dynamic access control", async () => {
 
 	async function createUser({ role }: { role: "admin" | "member" | "owner" }) {
 		const normalUserDetails = {
-			email: `some-test-user-${crypto.randomUUID()}@email.com`,
+			email: `some-test-user-${crypto.randomUUID()}@example.com`,
 			name: `some-test-user`,
 			password: `some-test-user-${crypto.randomUUID()}`,
 		};
@@ -398,7 +398,7 @@ describe("dynamic access control", async () => {
 
 		// Create a member with the role
 		const memberDetails = {
-			email: `delete-role-test-${crypto.randomUUID()}@email.com`,
+			email: `delete-role-test-${crypto.randomUUID()}@example.com`,
 			name: "test-member",
 			password: `password-${crypto.randomUUID()}`,
 		};
@@ -464,7 +464,7 @@ describe("dynamic access control", async () => {
 
 		// Create a member with multiple roles (comma-separated)
 		const memberDetails = {
-			email: `multi-role-test-${crypto.randomUUID()}@email.com`,
+			email: `multi-role-test-${crypto.randomUUID()}@example.com`,
 			name: "test-member",
 			password: `password-${crypto.randomUUID()}`,
 		};
@@ -539,7 +539,7 @@ describe("dynamic access control", async () => {
 	it("should not be allowed to delete a role that doesn't exist", async () => {
 		try {
 			const res = await auth.api.deleteOrgRole({
-				body: { roleName: "non-existent-role" },
+				body: { roleName: "nonexistent-role" },
 				headers,
 			});
 			expect(res).toBeNull();

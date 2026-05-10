@@ -68,7 +68,7 @@ describe("updateUser", async () => {
 			],
 		});
 
-		const newEmail = "new-email@email.com";
+		const newEmail = "new-email@example.com";
 		await globalRunWithClient(async () => {
 			await client.changeEmail({
 				newEmail,
@@ -118,13 +118,13 @@ describe("updateUser", async () => {
 
 			// NOW user email should be updated
 			const sessionRes2 = await client.getSession();
-			expect(sessionRes2.data?.user.email).toBe("new-email@email.com");
+			expect(sessionRes2.data?.user.email).toBe("new-email@example.com");
 			expect(sessionRes2.data?.user.emailVerified).toBe(true);
 		});
 	});
 
 	it("should update the user's password", async () => {
-		const newEmail = "new-email@email.com"; // User email is now this
+		const newEmail = "new-email@example.com"; // User email is now this
 		await globalRunWithClient(async () => {
 			const updated = await client.changePassword({
 				newPassword: "newPassword",
@@ -149,7 +149,7 @@ describe("updateUser", async () => {
 		const newHeaders = new Headers();
 		await client.signUp.email({
 			name: "Test User",
-			email: "test-updated-at@email.com",
+			email: "test-updated-at@example.com",
 			password: "originalPassword",
 			fetchOptions: {
 				onSuccess: sessionSetter(newHeaders),
@@ -222,7 +222,7 @@ describe("updateUser", async () => {
 		const newHeaders = new Headers();
 		await client.signUp.email({
 			name: "name",
-			email: "new-email-2@email.com",
+			email: "new-email-2@example.com",
 			password: "password",
 			fetchOptions: {
 				onSuccess: sessionSetter(newHeaders),
@@ -237,7 +237,7 @@ describe("updateUser", async () => {
 		});
 		expect(res.data).toBeNull();
 		const signInAttempt = await client.signIn.email({
-			email: "new-email-2@email.com",
+			email: "new-email-2@example.com",
 			password: "newPassword",
 		});
 		expect(signInAttempt.data).toBeNull();
@@ -283,7 +283,7 @@ describe("updateUser", async () => {
 		);
 		const headers = new Headers();
 		await client.signUp.email({
-			email: "new-email@emial.com",
+			email: "new-email@example.org",
 			name: "name",
 			password: "password",
 			fetchOptions: {
@@ -299,7 +299,7 @@ describe("updateUser", async () => {
 			where: [
 				{
 					field: "email",
-					value: "new-email@emial.com",
+					value: "new-email@example.org",
 				},
 			],
 		});

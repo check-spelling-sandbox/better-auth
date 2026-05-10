@@ -84,7 +84,7 @@ export const requestDomainVerification = (options: SSOOptions) => {
 				throw new APIError("FORBIDDEN", {
 					message:
 						"User must be owner of or belong to the SSO provider organization",
-					code: "INSUFICCIENT_ACCESS",
+					code: "INSUFFICIENT_ACCESS",
 				});
 			}
 
@@ -190,7 +190,7 @@ export const verifyDomain = (options: SSOOptions) => {
 				throw new APIError("FORBIDDEN", {
 					message:
 						"User must be owner of or belong to the SSO provider organization",
-					code: "INSUFICCIENT_ACCESS",
+					code: "INSUFFICIENT_ACCESS",
 				});
 			}
 

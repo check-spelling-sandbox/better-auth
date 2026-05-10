@@ -1349,7 +1349,7 @@ export type BetterAuthOptions = {
 				account?: {
 					create?: {
 						/**
-						 * Hook that is called before a account is created.
+						 * Hook that is called before an account is created.
 						 * If the hook returns false, the account will not be created.
 						 * If the hook returns an object, it'll be used instead of the original data
 						 */
@@ -1364,7 +1364,7 @@ export type BetterAuthOptions = {
 							  }
 						>;
 						/**
-						 * Hook that is called after a account is created.
+						 * Hook that is called after an account is created.
 						 */
 						after?: (
 							account: Account,
@@ -1376,7 +1376,7 @@ export type BetterAuthOptions = {
 					 */
 					update?: {
 						/**
-						 * Hook that is called before a account is update.
+						 * Hook that is called before an account is update.
 						 * If the hook returns false, the user will not be updated.
 						 * If the hook returns an object, it'll be used instead of the original data
 						 */
@@ -1391,7 +1391,7 @@ export type BetterAuthOptions = {
 							  }
 						>;
 						/**
-						 * Hook that is called after a account is updated.
+						 * Hook that is called after an account is updated.
 						 */
 						after?: (
 							account: Account & Record<string, unknown>,

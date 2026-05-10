@@ -103,13 +103,13 @@ You can view the [API Key plugin options](/docs/plugins/api-key/reference#api-ke
        */
       expiresIn?: number = 60 * 60 * 24 * 7
       /**
-       * User Id of the user that the Api Key belongs to. server-only.
+       * User ID of the user that the Api Key belongs to. server-only.
        * Required for user-owned keys when not using session headers.
        * @serverOnly
        */
       userId?: string = "user-id"
       /**
-       * Organization Id that the Api Key belongs to. 
+       * Organization ID that the Api Key belongs to. 
        * Required for organization-owned keys (when config has `references: "organization"`).
        */
       organizationId?: string = "org-id"

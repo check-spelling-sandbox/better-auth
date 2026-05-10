@@ -1581,15 +1581,15 @@ export const getNormalTestSuiteTests = (
 			const users = (await insertRandom("user", 3)).map((x) => x[0]);
 
 			// if this check fails, the test will fail.
-			// insertRandom needs to generate emails that contain `@email.com`
-			expect(users[0]!.email).toContain("@email.com");
+			// insertRandom needs to generate emails that contain `@example.com`
+			expect(users[0]!.email).toContain("@example.com");
 
 			const result = await adapter.findMany<User>({
 				model: "user",
 				where: [
 					{
 						field: "email",
-						value: "mail", // all emails contains `@email.com` from `insertRandom`
+						value: "example", // all emails contains `@example.com` from `insertRandom`
 						operator: "contains",
 					},
 				],

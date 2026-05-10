@@ -585,7 +585,7 @@ describe("inviteMember role validation", async () => {
 		plugins: [organization()],
 	});
 
-	it("should fail when inviting with a non-existent role", async () => {
+	it("should fail when inviting with a nonexistent role", async () => {
 		const { headers } = await signInWithTestUser();
 		const client = createAuthClient({
 			plugins: [organizationClient()],

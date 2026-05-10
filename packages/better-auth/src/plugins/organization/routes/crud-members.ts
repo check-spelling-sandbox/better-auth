@@ -21,7 +21,7 @@ import type { OrganizationOptions } from "../types";
 const baseMemberSchema = z.object({
 	userId: z.coerce.string().meta({
 		description:
-			'The user Id which represents the user to be added as a member. If `null` is provided, then it\'s expected to provide session headers. Eg: "user-id"',
+			'The user ID which represents the user to be added as a member. If `null` is provided, then it\'s expected to provide session headers. Eg: "user-id"',
 	}),
 	role: z.union([z.string(), z.array(z.string())]).meta({
 		description:
@@ -778,7 +778,7 @@ export const getActiveMember = <O extends OrganizationOptions>(options: O) =>
 const leaveOrganizationBodySchema = z.object({
 	organizationId: z.string().meta({
 		description:
-			'The organization Id for the member to leave. Eg: "organization-id"',
+			'The organization ID for the member to leave. Eg: "organization-id"',
 	}),
 });
 

@@ -160,7 +160,7 @@ describe("stripe", () => {
 			search: vi.fn().mockResolvedValue({ data: [] }),
 			retrieve: vi.fn().mockResolvedValue({
 				id: "cus_mock123",
-				email: "test@email.com",
+				email: "test@example.com",
 				deleted: false,
 			}),
 			update: vi.fn().mockResolvedValue({
@@ -233,7 +233,7 @@ describe("stripe", () => {
 	} satisfies StripeOptions;
 
 	const testUser = {
-		email: "test@email.com",
+		email: "test@example.com",
 		password: "password",
 		name: "Test User",
 	};
@@ -360,7 +360,7 @@ describe("stripe", () => {
 		const ctx = await auth.$context;
 
 		const userA = {
-			email: "user-a@email.com",
+			email: "user-a@example.com",
 			password: "password",
 			name: "User A",
 		};
@@ -383,7 +383,7 @@ describe("stripe", () => {
 		expect(userASub).toBeTruthy();
 
 		const userB = {
-			email: "user-b@email.com",
+			email: "user-b@example.com",
 			password: "password",
 			name: "User B",
 		};
@@ -466,7 +466,7 @@ describe("stripe", () => {
 		await client.signUp.email(
 			{
 				...testUser,
-				email: "metadata-test@email.com",
+				email: "metadata-test@example.com",
 			},
 			{
 				throw: true,
@@ -477,7 +477,7 @@ describe("stripe", () => {
 		await client.signIn.email(
 			{
 				...testUser,
-				email: "metadata-test@email.com",
+				email: "metadata-test@example.com",
 			},
 			{
 				throw: true,
@@ -528,7 +528,7 @@ describe("stripe", () => {
 		const userRes = await client.signUp.email(
 			{
 				...testUser,
-				email: "list-test@email.com",
+				email: "list-test@example.com",
 			},
 			{
 				throw: true,
@@ -540,7 +540,7 @@ describe("stripe", () => {
 		await client.signIn.email(
 			{
 				...testUser,
-				email: "list-test@email.com",
+				email: "list-test@example.com",
 			},
 			{
 				throw: true,
@@ -630,7 +630,7 @@ describe("stripe", () => {
 		const userRes = await client.signUp.email(
 			{
 				...testUser,
-				email: "annual-test@email.com",
+				email: "annual-test@example.com",
 			},
 			{
 				throw: true,
@@ -642,7 +642,7 @@ describe("stripe", () => {
 		await client.signIn.email(
 			{
 				...testUser,
-				email: "annual-test@email.com",
+				email: "annual-test@example.com",
 			},
 			{
 				throw: true,
@@ -719,7 +719,7 @@ describe("stripe", () => {
 		const { id: testReferenceId } = await testCtx.adapter.create({
 			model: "user",
 			data: {
-				email: "test@email.com",
+				email: "test@example.com",
 			},
 		});
 		const { id: testSubscriptionId } = await testCtx.adapter.create({
@@ -839,7 +839,7 @@ describe("stripe", () => {
 		const { id: testReferenceId } = await testCtx.adapter.create({
 			model: "user",
 			data: {
-				email: "test@email.com",
+				email: "test@example.com",
 			},
 		});
 		const { id: testSubscriptionId } = await testCtx.adapter.create({
@@ -963,7 +963,7 @@ describe("stripe", () => {
 		const { id: userId } = await testCtx.adapter.create({
 			model: "user",
 			data: {
-				email: "delete-test@email.com",
+				email: "delete-test@example.com",
 			},
 		});
 
@@ -1735,7 +1735,7 @@ describe("stripe", () => {
 		const { id: userId } = await testCtx.adapter.create({
 			model: "user",
 			data: {
-				email: "event-handler-test@email.com",
+				email: "event-handler-test@example.com",
 			},
 		});
 
@@ -2047,7 +2047,7 @@ describe("stripe", () => {
 		const { id: testReferenceId } = await ctx.adapter.create({
 			model: "user",
 			data: {
-				email: "update-callback@email.com",
+				email: "update-callback@example.com",
 			},
 		});
 
@@ -2148,7 +2148,7 @@ describe("stripe", () => {
 
 		const { id: userId } = await ctx.adapter.create({
 			model: "user",
-			data: { email: "schedule-sync@email.com" },
+			data: { email: "schedule-sync@example.com" },
 		});
 
 		await ctx.adapter.create({
@@ -2228,7 +2228,7 @@ describe("stripe", () => {
 
 		const { id: userId } = await ctx.adapter.create({
 			model: "user",
-			data: { email: "schedule-clear@email.com" },
+			data: { email: "schedule-clear@example.com" },
 		});
 
 		await ctx.adapter.create({
@@ -2298,7 +2298,7 @@ describe("stripe", () => {
 
 		const { id: userId } = await ctx.adapter.create({
 			model: "user",
-			data: { email: "delete-schedule@email.com" },
+			data: { email: "delete-schedule@example.com" },
 		});
 
 		await ctx.adapter.create({
@@ -2347,7 +2347,7 @@ describe("stripe", () => {
 		const userRes = await client.signUp.email(
 			{
 				...testUser,
-				email: "seat-upgrade@email.com",
+				email: "seat-upgrade@example.com",
 			},
 			{
 				throw: true,
@@ -2358,7 +2358,7 @@ describe("stripe", () => {
 		await client.signIn.email(
 			{
 				...testUser,
-				email: "seat-upgrade@email.com",
+				email: "seat-upgrade@example.com",
 			},
 			{
 				throw: true,
@@ -2432,7 +2432,7 @@ describe("stripe", () => {
 		const userRes = await client.signUp.email(
 			{
 				...testUser,
-				email: "duplicate-prevention@email.com",
+				email: "duplicate-prevention@example.com",
 			},
 			{
 				throw: true,
@@ -2443,7 +2443,7 @@ describe("stripe", () => {
 		await client.signIn.email(
 			{
 				...testUser,
-				email: "duplicate-prevention@email.com",
+				email: "duplicate-prevention@example.com",
 			},
 			{
 				throw: true,
@@ -2663,13 +2663,13 @@ describe("stripe", () => {
 		const ctx = await auth.$context;
 
 		const userRes = await client.signUp.email(
-			{ ...testUser, email: `periodend-${periodEnd.getTime()}@email.com` },
+			{ ...testUser, email: `periodend-${periodEnd.getTime()}@example.com` },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: `periodend-${periodEnd.getTime()}@email.com` },
+			{ ...testUser, email: `periodend-${periodEnd.getTime()}@example.com` },
 			{ throw: true, onSuccess: sessionSetter(headers) },
 		);
 
@@ -2740,13 +2740,13 @@ describe("stripe", () => {
 		);
 
 		await client.signUp.email(
-			{ ...testUser, email: "single-create@email.com" },
+			{ ...testUser, email: "single-create@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "single-create@email.com" },
+			{ ...testUser, email: "single-create@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -2778,7 +2778,7 @@ describe("stripe", () => {
 		await client.signUp.email(
 			{
 				...testUser,
-				email: "billing-portal@email.com",
+				email: "billing-portal@example.com",
 			},
 			{
 				throw: true,
@@ -2789,7 +2789,7 @@ describe("stripe", () => {
 		await client.signIn.email(
 			{
 				...testUser,
-				email: "billing-portal@email.com",
+				email: "billing-portal@example.com",
 			},
 			{
 				throw: true,
@@ -2842,12 +2842,12 @@ describe("stripe", () => {
 		const testCtx = await testAuth.$context;
 
 		const userRes = await testClient.signUp.email(
-			{ ...testUser, email: "custom-ref-billing-portal@email.com" },
+			{ ...testUser, email: "custom-ref-billing-portal@example.com" },
 			{ throw: true },
 		);
 		const headers = new Headers();
 		await testClient.signIn.email(
-			{ ...testUser, email: "custom-ref-billing-portal@email.com" },
+			{ ...testUser, email: "custom-ref-billing-portal@example.com" },
 			{ throw: true, onSuccess: testSessionSetter(headers) },
 		);
 
@@ -2917,12 +2917,12 @@ describe("stripe", () => {
 
 		// Sign up and sign in the user
 		const userRes = await testClient.signUp.email(
-			{ ...testUser, email: "org-ref@email.com" },
+			{ ...testUser, email: "org-ref@example.com" },
 			{ throw: true },
 		);
 		const headers = new Headers();
 		await testClient.signIn.email(
-			{ ...testUser, email: "org-ref@email.com" },
+			{ ...testUser, email: "org-ref@example.com" },
 			{ throw: true, onSuccess: testSessionSetter(headers) },
 		);
 
@@ -3009,13 +3009,13 @@ describe("stripe", () => {
 
 		// Create a user
 		const userRes = await client.signUp.email(
-			{ ...testUser, email: "trial-prevention@email.com" },
+			{ ...testUser, email: "trial-prevention@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "trial-prevention@email.com" },
+			{ ...testUser, email: "trial-prevention@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -3111,13 +3111,13 @@ describe("stripe", () => {
 
 		// Create a user
 		const userRes = await client.signUp.email(
-			{ ...testUser, email: "upgrade-existing@email.com" },
+			{ ...testUser, email: "upgrade-existing@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "upgrade-existing@email.com" },
+			{ ...testUser, email: "upgrade-existing@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -3257,13 +3257,13 @@ describe("stripe", () => {
 
 		// Create a user
 		const userRes = await client.signUp.email(
-			{ ...testUser, email: "cross-plan-trial@email.com" },
+			{ ...testUser, email: "cross-plan-trial@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "cross-plan-trial@email.com" },
+			{ ...testUser, email: "cross-plan-trial@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -3365,7 +3365,7 @@ describe("stripe", () => {
 		// Setup mock for customer retrieve and update
 		mockStripe.customers.retrieve = vi.fn().mockResolvedValue({
 			id: "cus_mock123",
-			email: "test@email.com",
+			email: "test@example.com",
 			deleted: false,
 		});
 		mockStripe.customers.update = vi.fn().mockResolvedValue({
@@ -3393,10 +3393,10 @@ describe("stripe", () => {
 		// Clear mocks to track the update
 		vi.clearAllMocks();
 
-		// Re-setup the retrieve mock for the update flow
+		// Re-set-up the retrieve mock for the update flow
 		mockStripe.customers.retrieve = vi.fn().mockResolvedValue({
 			id: "cus_mock123",
-			email: "test@email.com",
+			email: "test@example.com",
 			deleted: false,
 		});
 		mockStripe.customers.update = vi.fn().mockResolvedValue({
@@ -3452,7 +3452,7 @@ describe("stripe", () => {
 			// Sign up a user
 			const userRes = await testClient.signUp.email(
 				{
-					email: "custom-params@email.com",
+					email: "custom-params@example.com",
 					password: "password",
 					name: "Custom User",
 				},
@@ -3465,7 +3465,7 @@ describe("stripe", () => {
 			expect(getCustomerCreateParamsMock).toHaveBeenCalledWith(
 				expect.objectContaining({
 					id: userRes.user.id,
-					email: "custom-params@email.com",
+					email: "custom-params@example.com",
 					name: "Custom User",
 				}),
 				expect.objectContaining({
@@ -3476,7 +3476,7 @@ describe("stripe", () => {
 			// Verify customer was created with merged params
 			expect(mockStripe.customers.create).toHaveBeenCalledWith(
 				expect.objectContaining({
-					email: "custom-params@email.com",
+					email: "custom-params@example.com",
 					name: "Custom User",
 					metadata: expect.objectContaining({
 						userId: userRes.user.id,
@@ -3519,7 +3519,7 @@ describe("stripe", () => {
 			// Sign up a user
 			await testAuthClient.signUp.email(
 				{
-					email: "address-user@email.com",
+					email: "address-user@example.com",
 					password: "password",
 					name: "Address User",
 				},
@@ -3531,7 +3531,7 @@ describe("stripe", () => {
 			// Verify customer was created with address
 			expect(mockStripe.customers.create).toHaveBeenCalledWith(
 				expect.objectContaining({
-					email: "address-user@email.com",
+					email: "address-user@example.com",
 					name: "Address User",
 					address: {
 						line1: "123 Main St",
@@ -3578,7 +3578,7 @@ describe("stripe", () => {
 			// Sign up a user
 			const userRes = await testAuthClient.signUp.email(
 				{
-					email: "merge-test@email.com",
+					email: "merge-test@example.com",
 					password: "password",
 					name: "Merge User",
 				},
@@ -3591,7 +3591,7 @@ describe("stripe", () => {
 			// defu merges objects and preserves all fields
 			expect(mockStripe.customers.create).toHaveBeenCalledWith(
 				expect.objectContaining({
-					email: "merge-test@email.com",
+					email: "merge-test@example.com",
 					name: "Merge User",
 					phone: "+1234567890",
 					metadata: {
@@ -3628,7 +3628,7 @@ describe("stripe", () => {
 			// Sign up a user
 			const userRes = await testAuthClient.signUp.email(
 				{
-					email: "no-custom-params@email.com",
+					email: "no-custom-params@example.com",
 					password: "password",
 					name: "Default User",
 				},
@@ -3639,7 +3639,7 @@ describe("stripe", () => {
 
 			// Verify customer was created with default params only
 			expect(mockStripe.customers.create).toHaveBeenCalledWith({
-				email: "no-custom-params@email.com",
+				email: "no-custom-params@example.com",
 				name: "Default User",
 				metadata: {
 					customerType: "user",
@@ -3897,7 +3897,7 @@ describe("stripe", () => {
 			const { id: testUserId } = await testCtx.adapter.create({
 				model: "user",
 				data: {
-					email: "async-test@email.com",
+					email: "async-test@example.com",
 				},
 			});
 
@@ -4053,7 +4053,7 @@ describe("stripe", () => {
 			const { id: testUserId } = await testCtx.adapter.create({
 				model: "user",
 				data: {
-					email: "v18-test@email.com",
+					email: "v18-test@example.com",
 				},
 			});
 
@@ -5331,13 +5331,13 @@ describe("stripe", () => {
 			const ctx = await auth.$context;
 
 			const userRes = await client.signUp.email(
-				{ ...testUser, email: "trial-findone-test@email.com" },
+				{ ...testUser, email: "trial-findone-test@example.com" },
 				{ throw: true },
 			);
 
 			const headers = new Headers();
 			await client.signIn.email(
-				{ ...testUser, email: "trial-findone-test@email.com" },
+				{ ...testUser, email: "trial-findone-test@example.com" },
 				{ throw: true, onSuccess: sessionSetter(headers) },
 			);
 
@@ -5355,7 +5355,7 @@ describe("stripe", () => {
 				},
 			});
 
-			// Create an new incomplete subscription (without trial info)
+			// Create a new incomplete subscription (without trial info)
 			const incompleteSubId = "sub_incomplete_new";
 			await ctx.adapter.create({
 				model: "subscription",
@@ -5617,13 +5617,13 @@ describe("stripe", () => {
 			const ctx = await auth.$context;
 
 			const userRes = await client.signUp.email(
-				{ ...testUser, email: "trial-abuse-cancel@email.com" },
+				{ ...testUser, email: "trial-abuse-cancel@example.com" },
 				{ throw: true },
 			);
 
 			const headers = new Headers();
 			await client.signIn.email(
-				{ ...testUser, email: "trial-abuse-cancel@email.com" },
+				{ ...testUser, email: "trial-abuse-cancel@example.com" },
 				{ throw: true, onSuccess: sessionSetter(headers) },
 			);
 
@@ -6643,13 +6643,13 @@ describe("stripe", () => {
 		const ctx = await auth.$context;
 
 		const userRes = await client.signUp.email(
-			{ ...testUser, email: "schedule-downgrade@email.com" },
+			{ ...testUser, email: "schedule-downgrade@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "schedule-downgrade@email.com" },
+			{ ...testUser, email: "schedule-downgrade@example.com" },
 			{ throw: true, onSuccess: sessionSetter(headers) },
 		);
 
@@ -6750,13 +6750,13 @@ describe("stripe", () => {
 		const ctx = await auth.$context;
 
 		const userRes = await client.signUp.email(
-			{ ...testUser, email: "release-schedule@email.com" },
+			{ ...testUser, email: "release-schedule@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "release-schedule@email.com" },
+			{ ...testUser, email: "release-schedule@example.com" },
 			{ throw: true, onSuccess: sessionSetter(headers) },
 		);
 
@@ -6845,13 +6845,13 @@ describe("stripe", () => {
 		const ctx = await auth.$context;
 
 		const userRes = await client.signUp.email(
-			{ ...testUser, email: "release-then-upgrade@email.com" },
+			{ ...testUser, email: "release-then-upgrade@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "release-then-upgrade@email.com" },
+			{ ...testUser, email: "release-then-upgrade@example.com" },
 			{ throw: true, onSuccess: sessionSetter(headers) },
 		);
 
@@ -6939,13 +6939,13 @@ describe("stripe", () => {
 		const ctx = await auth.$context;
 
 		const userRes = await client.signUp.email(
-			{ ...testUser, email: "external-schedule@email.com" },
+			{ ...testUser, email: "external-schedule@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "external-schedule@email.com" },
+			{ ...testUser, email: "external-schedule@example.com" },
 			{ throw: true, onSuccess: sessionSetter(headers) },
 		);
 
@@ -7055,13 +7055,13 @@ describe("stripe", () => {
 			const ctx = await auth.$context;
 
 			const userRes = await client.signUp.email(
-				{ ...testUser, email: "lineitem-upgrade@email.com" },
+				{ ...testUser, email: "lineitem-upgrade@example.com" },
 				{ throw: true },
 			);
 
 			const headers = new Headers();
 			await client.signIn.email(
-				{ ...testUser, email: "lineitem-upgrade@email.com" },
+				{ ...testUser, email: "lineitem-upgrade@example.com" },
 				{ throw: true, onSuccess: sessionSetter(headers) },
 			);
 
@@ -7166,13 +7166,13 @@ describe("stripe", () => {
 			const ctx = await auth.$context;
 
 			const userRes = await client.signUp.email(
-				{ ...testUser, email: "lineitem-schedule@email.com" },
+				{ ...testUser, email: "lineitem-schedule@example.com" },
 				{ throw: true },
 			);
 
 			const headers = new Headers();
 			await client.signIn.email(
-				{ ...testUser, email: "lineitem-schedule@email.com" },
+				{ ...testUser, email: "lineitem-schedule@example.com" },
 				{ throw: true, onSuccess: sessionSetter(headers) },
 			);
 
@@ -7309,13 +7309,13 @@ describe("stripe", () => {
 			const ctx = await auth.$context;
 
 			const userRes = await client.signUp.email(
-				{ ...testUser, email: "asymmetric-up@email.com" },
+				{ ...testUser, email: "asymmetric-up@example.com" },
 				{ throw: true },
 			);
 
 			const headers = new Headers();
 			await client.signIn.email(
-				{ ...testUser, email: "asymmetric-up@email.com" },
+				{ ...testUser, email: "asymmetric-up@example.com" },
 				{ throw: true, onSuccess: sessionSetter(headers) },
 			);
 
@@ -7410,13 +7410,13 @@ describe("stripe", () => {
 			const ctx = await auth.$context;
 
 			const userRes = await client.signUp.email(
-				{ ...testUser, email: "asymmetric-down@email.com" },
+				{ ...testUser, email: "asymmetric-down@example.com" },
 				{ throw: true },
 			);
 
 			const headers = new Headers();
 			await client.signIn.email(
-				{ ...testUser, email: "asymmetric-down@email.com" },
+				{ ...testUser, email: "asymmetric-down@example.com" },
 				{ throw: true, onSuccess: sessionSetter(headers) },
 			);
 
@@ -7542,13 +7542,13 @@ describe("stripe", () => {
 			const ctx = await auth.$context;
 
 			const userRes = await client.signUp.email(
-				{ ...testUser, email: "dup-lineitem@email.com" },
+				{ ...testUser, email: "dup-lineitem@example.com" },
 				{ throw: true },
 			);
 
 			const headers = new Headers();
 			await client.signIn.email(
-				{ ...testUser, email: "dup-lineitem@email.com" },
+				{ ...testUser, email: "dup-lineitem@example.com" },
 				{ throw: true, onSuccess: sessionSetter(headers) },
 			);
 
@@ -7634,13 +7634,13 @@ describe("stripe", () => {
 			const ctx = await auth.$context;
 
 			const userRes = await client.signUp.email(
-				{ ...testUser, email: "dup-lineitem-sched@email.com" },
+				{ ...testUser, email: "dup-lineitem-sched@example.com" },
 				{ throw: true },
 			);
 
 			const headers = new Headers();
 			await client.signIn.email(
-				{ ...testUser, email: "dup-lineitem-sched@email.com" },
+				{ ...testUser, email: "dup-lineitem-sched@example.com" },
 				{ throw: true, onSuccess: sessionSetter(headers) },
 			);
 
@@ -8713,7 +8713,7 @@ describe("stripe", () => {
 				},
 			);
 
-			const email = "trial-merge@email.com";
+			const email = "trial-merge@example.com";
 			await client.signUp.email({ ...testUser, email }, { throw: true });
 			const headers = new Headers();
 			await client.signIn.email(
@@ -8779,7 +8779,7 @@ describe("stripe", () => {
 				},
 			);
 
-			const email = "hijack-attempt@email.com";
+			const email = "hijack-attempt@example.com";
 			await client.signUp.email({ ...testUser, email }, { throw: true });
 			const headers = new Headers();
 			await client.signIn.email(
@@ -8847,7 +8847,7 @@ describe("stripe", () => {
 				},
 			);
 
-			const email = "passthrough@email.com";
+			const email = "passthrough@example.com";
 			await client.signUp.email({ ...testUser, email }, { throw: true });
 			const headers = new Headers();
 			await client.signIn.email(
@@ -8906,7 +8906,7 @@ describe("stripe", () => {
 				},
 			);
 
-			const email = "customer-update-override@email.com";
+			const email = "customer-update-override@example.com";
 			await client.signUp.email({ ...testUser, email }, { throw: true });
 			const headers = new Headers();
 			await client.signIn.email(
@@ -8957,7 +8957,7 @@ describe("stripe", () => {
 				},
 			);
 
-			const email = "customer-update-default@email.com";
+			const email = "customer-update-default@example.com";
 			await client.signUp.email({ ...testUser, email }, { throw: true });
 			const headers = new Headers();
 			await client.signIn.email(
@@ -9011,7 +9011,7 @@ describe("stripe", () => {
 				},
 			);
 
-			const email = "locale-request-wins@email.com";
+			const email = "locale-request-wins@example.com";
 			await client.signUp.email({ ...testUser, email }, { throw: true });
 			const headers = new Headers();
 			await client.signIn.email(
@@ -9063,7 +9063,7 @@ describe("stripe", () => {
 				},
 			);
 
-			const email = "locale-fallback@email.com";
+			const email = "locale-fallback@example.com";
 			await client.signUp.email({ ...testUser, email }, { throw: true });
 			const headers = new Headers();
 			await client.signIn.email(
@@ -9095,7 +9095,7 @@ describe("stripe", () => {
 				},
 			);
 
-			const email = "metadata-merge@email.com";
+			const email = "metadata-merge@example.com";
 			await client.signUp.email({ ...testUser, email }, { throw: true });
 			const headers = new Headers();
 			await client.signIn.email(

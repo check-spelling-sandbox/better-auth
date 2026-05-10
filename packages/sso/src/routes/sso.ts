@@ -54,7 +54,7 @@ import { getSafeRedirectUrl, processSAMLResponse } from "./saml-pipeline";
 
 /**
  * Builds the OIDC redirect URI. Uses the shared `redirectURI` option
- * when set, otherwise falls back to `/sso/callback/:providerId`.
+ * when set; otherwise, falls back to `/sso/callback/:providerId`.
  */
 function getOIDCRedirectURI(
 	baseURL: string,

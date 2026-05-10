@@ -114,7 +114,7 @@ describe("multi-session", async () => {
 
 	it("should revoke a session and set the next active", async () => {
 		const testUser3 = {
-			email: "my-email@email.com",
+			email: "my-email@example.com",
 			password: "password",
 			name: "Name",
 		};

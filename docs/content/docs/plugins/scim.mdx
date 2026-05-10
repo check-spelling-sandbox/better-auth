@@ -351,7 +351,7 @@ Provisions a new user to the database. The user will have an account associated 
       /**
        * List of emails associated to the user, only a single email can be primary
       */
-      emails?: Array<{ value: string, primary?: boolean }> = [{ value: "daniel@email.com", primary: true }]
+      emails?: Array<{ value: string, primary?: boolean }> = [{ value: "daniel@example.com", primary: true }]
   }
   ```
 </APIMethod>
@@ -387,7 +387,7 @@ Replaces an existing user details in the database. This operation can only updat
       /**
        * List of emails associated to the user, only a single email can be primary
       */
-      emails?: Array<{ value: string, primary?: boolean }> = [{ value: "daniel@email.com", primary: true }]
+      emails?: Array<{ value: string, primary?: boolean }> = [{ value: "daniel@example.com", primary: true }]
   }
   ```
 </APIMethod>
@@ -517,7 +517,7 @@ export const scimProviderTableFields = [
 		name: "organizationId",
 		type: "string",
 		description:
-			"The organization Id. If provider is linked to an organization.",
+			"The organization ID. If provider is linked to an organization.",
 		isOptional: true,
 	},
 ];

@@ -66,7 +66,7 @@ export const createTeam = <O extends OrganizationOptions>(options: O) => {
 											organizationId: {
 												type: "string",
 												description:
-													"ID of the organization the team belongs to",
+													"ID of the organization to which the team belongs",
 											},
 											createdAt: {
 												type: "string",
@@ -413,7 +413,7 @@ export const updateTeam = <O extends OrganizationOptions>(options: O) => {
 											organizationId: {
 												type: "string",
 												description:
-													"ID of the organization the team belongs to",
+													"ID of the organization to which the team belongs",
 											},
 											createdAt: {
 												type: "string",
@@ -598,7 +598,7 @@ export const listOrganizationTeams = <O extends OrganizationOptions>(
 												organizationId: {
 													type: "string",
 													description:
-														"ID of the organization the team belongs to",
+														"ID of the organization to which the team belongs",
 												},
 												createdAt: {
 													type: "string",
@@ -866,7 +866,7 @@ export const listTeamMembers = <O extends OrganizationOptions>(options: O) =>
 												teamId: {
 													type: "string",
 													description:
-														"The team ID of the team the team member is in",
+														"The team ID of the team containing the team member",
 												},
 												createdAt: {
 													type: "string",
@@ -923,7 +923,7 @@ const addTeamMemberBodySchema = z.object({
 
 	userId: z.coerce.string().meta({
 		description:
-			"The user Id which represents the user to be added as a member.",
+			"The user ID which represents the user to be added as a member.",
 	}),
 
 	organizationId: z
@@ -964,7 +964,7 @@ export const addTeamMember = <O extends OrganizationOptions>(options: O) =>
 											teamId: {
 												type: "string",
 												description:
-													"The team ID of the team the team member is in",
+													"The team ID of the team containing the team member",
 											},
 											createdAt: {
 												type: "string",

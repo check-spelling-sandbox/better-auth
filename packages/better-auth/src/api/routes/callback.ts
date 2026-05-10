@@ -122,7 +122,7 @@ export const callbackOAuth = createAuthEndpoint(
 
 		if (!provider) {
 			c.context.logger.error(
-				"Oauth provider with id",
+				"OAuth provider with id",
 				c.params.id,
 				"not found",
 			);

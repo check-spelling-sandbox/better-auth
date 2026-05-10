@@ -58,7 +58,7 @@ describe("db", async () => {
 			},
 		});
 		const res = await client.signUp.email({
-			email: "test@email.com",
+			email: "test@example.com",
 			name: "test",
 			password: "password",
 		});
@@ -133,7 +133,7 @@ describe("db", async () => {
 			},
 		});
 		const res = await client.signUp.email({
-			email: "test@email.com",
+			email: "test@example.com",
 			password: "password",
 			name: "Test User",
 		});
@@ -145,7 +145,7 @@ describe("db", async () => {
 				throw: true,
 			},
 		});
-		expect(session?.user.email).toBe("test@email.com");
+		expect(session?.user.email).toBe("test@example.com");
 	});
 
 	it("should coerce string where values to match field types", async () => {
@@ -254,7 +254,7 @@ describe("db", async () => {
 		});
 
 		const res = await client.signUp.email({
-			email: "delete-test@email.com",
+			email: "delete-test@example.com",
 			password: "password",
 			name: "Delete Test User",
 		});
@@ -279,7 +279,7 @@ describe("db", async () => {
 		expect(hookUserDeleteBefore).toHaveBeenCalledWith(
 			expect.objectContaining({
 				id: userId,
-				email: "delete-test@email.com",
+				email: "delete-test@example.com",
 				name: "Delete Test User",
 			}),
 			expect.any(Object),
@@ -288,7 +288,7 @@ describe("db", async () => {
 		expect(hookUserDeleteAfter).toHaveBeenCalledWith(
 			expect.objectContaining({
 				id: userId,
-				email: "delete-test@email.com",
+				email: "delete-test@example.com",
 				name: "Delete Test User",
 			}),
 			expect.any(Object),
@@ -321,7 +321,7 @@ describe("db", async () => {
 		});
 
 		const res = await client.signUp.email({
-			email: "abort-delete-test@email.com",
+			email: "abort-delete-test@example.com",
 			password: "password",
 			name: "Abort Delete Test User",
 		});
@@ -348,7 +348,7 @@ describe("db", async () => {
 		expect(hookUserDeleteBefore).toHaveBeenCalledWith(
 			expect.objectContaining({
 				id: userId,
-				email: "abort-delete-test@email.com",
+				email: "abort-delete-test@example.com",
 				name: "Abort Delete Test User",
 			}),
 			expect.any(Object),

@@ -320,7 +320,7 @@ declare function removeEventListener<
 	options?: EventTargetEventListenerOptions | boolean,
 ): void;
 /**
- * Dispatches a synthetic event event to target and returns true if either event's cancelable attribute value is false or its preventDefault() method was not invoked, and false otherwise.
+ * Dispatches a synthetic event to target and returns true if either event's cancelable attribute value is false or its preventDefault() method was not invoked, and false otherwise.
  *
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/dispatchEvent)
  */
@@ -382,7 +382,7 @@ declare const self: ServiceWorkerGlobalScope;
  */
 declare const crypto: Crypto;
 /**
- * The Cache API allows fine grained control of reading and writing from the Cloudflare global network cache.
+ * The Cache API allows fine-grained control of reading and writing from the Cloudflare global network cache.
  *
  * [Cloudflare Docs Reference](https://developers.cloudflare.com/workers/runtime-apis/cache/)
  */
@@ -865,7 +865,7 @@ declare class EventTarget<
 		options?: EventTargetEventListenerOptions | boolean,
 	): void;
 	/**
-	 * Dispatches a synthetic event event to target and returns true if either event's cancelable attribute value is false or its preventDefault() method was not invoked, and false otherwise.
+	 * Dispatches a synthetic event to target and returns true if either event's cancelable attribute value is false or its preventDefault() method was not invoked, and false otherwise.
 	 *
 	 * [MDN Reference](https://developer.mozilla.org/docs/Web/API/EventTarget/dispatchEvent)
 	 */
@@ -1010,7 +1010,7 @@ interface FileOptions {
 	lastModified?: number;
 }
 /**
- * The Cache API allows fine grained control of reading and writing from the Cloudflare global network cache.
+ * The Cache API allows fine-grained control of reading and writing from the Cloudflare global network cache.
  *
  * [Cloudflare Docs Reference](https://developers.cloudflare.com/workers/runtime-apis/cache/)
  */
@@ -1020,7 +1020,7 @@ declare abstract class CacheStorage {
 	readonly default: Cache;
 }
 /**
- * The Cache API allows fine grained control of reading and writing from the Cloudflare global network cache.
+ * The Cache API allows fine-grained control of reading and writing from the Cloudflare global network cache.
  *
  * [Cloudflare Docs Reference](https://developers.cloudflare.com/workers/runtime-apis/cache/)
  */
@@ -2917,7 +2917,7 @@ interface WebSocket extends EventTarget<WebSocketEventMap> {
 	 */
 	send(message: (ArrayBuffer | ArrayBufferView) | string): void;
 	/**
-	 * Closes the WebSocket connection, optionally using code as the the WebSocket connection close code and reason as the the WebSocket connection close reason.
+	 * Closes the WebSocket connection, optionally using code as the WebSocket connection close code and reason as the WebSocket connection close reason.
 	 *
 	 * [MDN Reference](https://developer.mozilla.org/docs/Web/API/WebSocket/close)
 	 */
@@ -3649,7 +3649,7 @@ interface Ai_Cf_Openai_Whisper_Large_V3_Turbo_Input {
 	 */
 	initial_prompt?: string;
 	/**
-	 * The prefix it appended the the beginning of the output of the transcription and can guide the transcription result.
+	 * The prefix it appended the beginning of the output of the transcription and can guide the transcription result.
 	 */
 	prefix?: string;
 }
@@ -4933,7 +4933,7 @@ interface Qwen_Qwq_32B_Messages {
 		  }
 	)[];
 	/**
-	 * JSON schema that should be fufilled for the response.
+	 * JSON schema that should be fulfilled for the response.
 	 */
 	guided_json?: object;
 	/**
@@ -5207,7 +5207,7 @@ interface Mistral_Small_3_1_24B_Instruct_Messages {
 		  }
 	)[];
 	/**
-	 * JSON schema that should be fufilled for the response.
+	 * JSON schema that should be fulfilled for the response.
 	 */
 	guided_json?: object;
 	/**
@@ -5300,7 +5300,7 @@ interface Google_Gemma_3_12B_It_Prompt {
 	 */
 	prompt: string;
 	/**
-	 * JSON schema that should be fufilled for the response.
+	 * JSON schema that should be fulfilled for the response.
 	 */
 	guided_json?: object;
 	/**
@@ -5477,7 +5477,7 @@ interface Google_Gemma_3_12B_It_Messages {
 		  }
 	)[];
 	/**
-	 * JSON schema that should be fufilled for the response.
+	 * JSON schema that should be fulfilled for the response.
 	 */
 	guided_json?: object;
 	/**
@@ -5753,7 +5753,7 @@ interface Ai_Cf_Meta_Llama_4_Messages {
 	)[];
 	response_format?: JSONMode;
 	/**
-	 * JSON schema that should be fufilled for the response.
+	 * JSON schema that should be fulfilled for the response.
 	 */
 	guided_json?: object;
 	/**
@@ -6770,7 +6770,7 @@ interface IncomingRequestCfPropertiesGeographicInformation {
 	 */
 	isEUCountry?: "1";
 	/**
-	 * A two-letter code indicating the continent the request originated from.
+	 * A two-letter code indicating the originating continent for the request.
 	 *
 	 * @example "AN"
 	 */
@@ -6836,7 +6836,7 @@ interface IncomingRequestCfPropertiesTLSClientAuth {
 	 * @example "FAILED:self signed certificate"
 	 */
 	certVerified: Exclude<CertVerificationStatus, "NONE">;
-	/** The presented certificate's revokation status.
+	/** The presented certificate's revocation status.
 	 *
 	 * - A value of `"1"` indicates the certificate has been revoked
 	 * - A value of `"0"` indicates the certificate has not been revoked
@@ -7402,7 +7402,7 @@ interface Hyperdrive {
 	/**
 	 * Connect directly to Hyperdrive as if it's your database, returning a TCP socket.
 	 *
-	 * Calling this method returns an idential socket to if you call
+	 * Calling this method returns an identical socket to if you call
 	 * `connect("host:port")` using the `host` and `port` fields from this object.
 	 * Pick whichever approach works better with your preferred DB client library.
 	 *
@@ -7425,7 +7425,7 @@ interface Hyperdrive {
 	 */
 	readonly host: string;
 	/*
-	 * The port that must be paired the the host field when connecting.
+	 * The port that must be paired the host field when connecting.
 	 */
 	readonly port: number;
 	/*
@@ -8459,7 +8459,7 @@ declare abstract class Vectorize {
 	): Promise<VectorizeMatches>;
 	/**
 	 * Use the provided vector-id to perform a similarity search across the index.
-	 * @param vectorId Id for a vector in the index against which the index should be queried.
+	 * @param vectorId ID for a vector in the index against which the index should be queried.
 	 * @param options Configuration options to massage the returned data.
 	 * @returns A promise that resolves with matched and scored vectors.
 	 */
@@ -8554,7 +8554,7 @@ declare module "cloudflare:workflows" {
 declare abstract class Workflow<PARAMS = unknown> {
 	/**
 	 * Get a handle to an existing instance of the Workflow.
-	 * @param id Id for the instance of this Workflow
+	 * @param id ID for the instance of this Workflow
 	 * @returns A promise that resolves with a handle for the Instance
 	 */
 	public get(id: string): Promise<WorkflowInstance>;

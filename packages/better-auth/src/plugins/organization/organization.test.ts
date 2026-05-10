@@ -501,7 +501,7 @@ describe("organization", async () => {
 	it("should not allow inviting a user twice regardless of email casing", async () => {
 		const rng = crypto.randomUUID();
 		const user = {
-			email: `${rng}@email.com`,
+			email: `${rng}@example.com`,
 			password: rng,
 			name: rng,
 		};
@@ -1051,7 +1051,7 @@ describe("organization", async () => {
 	it("should add member on the server directly", async () => {
 		const newUser = await auth.api.signUpEmail({
 			body: {
-				email: "new-member@email.com",
+				email: "new-member@example.com",
 				password: "password",
 				name: "new member",
 			},
@@ -1081,7 +1081,7 @@ describe("organization", async () => {
 	it("should add member on the server with multiple roles", async () => {
 		const newUser = await auth.api.signUpEmail({
 			body: {
-				email: "new-member-mr@email.com",
+				email: "new-member-mr@example.com",
 				password: "password",
 				name: "new member mr",
 			},
@@ -1118,10 +1118,10 @@ describe("organization", async () => {
 		});
 
 		const users = [
-			"user1@emial.com",
-			"user2@email.com",
-			"user3@email.com",
-			"user4@email.com",
+			"user1@example.org",
+			"user2@example.com",
+			"user3@example.com",
+			"user4@example.com",
 		];
 
 		// Create all users in parallel
@@ -1157,12 +1157,12 @@ describe("organization", async () => {
 		await Promise.all(memberPromises);
 
 		const userOverLimit = {
-			email: "shouldthrowerror@email.com",
+			email: "shouldthrowerror@example.com",
 			password: "password",
 			name: "name",
 		};
 		const userOverLimit2 = {
-			email: "shouldthrowerror2@email.com",
+			email: "shouldthrowerror2@example.com",
 			password: "password",
 			name: "name",
 		};
@@ -1282,14 +1282,14 @@ describe("organization", async () => {
 		const [newUser, secondUser] = await Promise.all([
 			auth.api.signUpEmail({
 				body: {
-					email: "user1@email.com",
+					email: "user1@example.com",
 					password: "password",
 					name: "user1",
 				},
 			}),
 			auth.api.signUpEmail({
 				body: {
-					email: "user2@email.com",
+					email: "user2@example.com",
 					password: "password",
 					name: "user2",
 				},
@@ -1360,13 +1360,13 @@ describe("organization", async () => {
 	it("should allow listing invitations for a user using authClient", async () => {
 		const rng = crypto.randomUUID();
 		const user = {
-			email: `${rng}@email.com`,
+			email: `${rng}@example.com`,
 			password: rng,
 			name: rng,
 		};
 		const rng2 = crypto.randomUUID();
 		const orgAdminUser = {
-			email: `${rng2}@email.com`,
+			email: `${rng2}@example.com`,
 			password: rng2,
 			name: rng2,
 		};
@@ -1468,12 +1468,12 @@ describe("invitation expiration and filtering", async () => {
 	it("should allow rejecting expired invitations", async () => {
 		const rng = crypto.randomUUID();
 		const adminUser = {
-			email: `admin-${rng}@email.com`,
+			email: `admin-${rng}@example.com`,
 			password: rng,
 			name: `admin-${rng}`,
 		};
 		const invitedUser = {
-			email: `invited-${rng}@email.com`,
+			email: `invited-${rng}@example.com`,
 			password: rng,
 			name: `invited-${rng}`,
 		};
@@ -1521,12 +1521,12 @@ describe("invitation expiration and filtering", async () => {
 	it("should only list pending invitations for a user", async () => {
 		const rng = crypto.randomUUID();
 		const adminUser = {
-			email: `admin2-${rng}@email.com`,
+			email: `admin2-${rng}@example.com`,
 			password: rng,
 			name: `admin2-${rng}`,
 		};
 		const invitedUser = {
-			email: `invited2-${rng}@email.com`,
+			email: `invited2-${rng}@example.com`,
 			password: rng,
 			name: `invited2-${rng}`,
 		};
@@ -1589,12 +1589,12 @@ describe("invitation expiration and filtering", async () => {
 	it("should not list rejected invitations", async () => {
 		const rng = crypto.randomUUID();
 		const adminUser = {
-			email: `admin3-${rng}@email.com`,
+			email: `admin3-${rng}@example.com`,
 			password: rng,
 			name: `admin3-${rng}`,
 		};
 		const invitedUser = {
-			email: `invited3-${rng}@email.com`,
+			email: `invited3-${rng}@example.com`,
 			password: rng,
 			name: `invited3-${rng}`,
 		};
@@ -2240,7 +2240,7 @@ describe("owner can update roles", async () => {
 		],
 	});
 
-	const adminEmail = "admin@email.com";
+	const adminEmail = "admin@example.com";
 	const adminPassword = "adminpassword";
 
 	await auth.api.createUser({
@@ -2280,7 +2280,7 @@ describe("owner can update roles", async () => {
 	}
 
 	it("allows setting custom role to a user", async () => {
-		const userEmail = "user@email.com";
+		const userEmail = "user@example.com";
 		const userPassword = "userpassword";
 
 		const { user } = await auth.api.createUser({
@@ -2375,7 +2375,7 @@ describe("owner can update roles", async () => {
 
 	it("should throw error if sole org owner tries to remove creator role"),
 		async () => {
-			const userEmail = "user@email.com";
+			const userEmail = "user@example.com";
 			const userPassword = "userpassword";
 
 			const signInRes = await auth.api.signInEmail({
@@ -3097,7 +3097,7 @@ describe("Additional Fields", async () => {
 	const addedMemberHeaders = new Headers();
 
 	const { data: addedMember, error } = await client.signUp.email({
-		email: "new-member-for-org@email.com",
+		email: "new-member-for-org@example.com",
 		password: "password",
 		name: "new member for org",
 		fetchOptions: {

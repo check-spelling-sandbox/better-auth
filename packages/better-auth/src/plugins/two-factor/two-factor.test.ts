@@ -103,7 +103,7 @@ describe("two factor", async () => {
 		expect(totpURI).toContain(`&issuer=Custom+App+Name&`);
 	});
 
-	it("should fallback to appName when no issuer provided", async () => {
+	it("should fall back to appName when no issuer provided", async () => {
 		const res = await client.twoFactor.enable({
 			password: testUser.password,
 			fetchOptions: {

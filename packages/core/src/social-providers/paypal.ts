@@ -81,7 +81,7 @@ export const paypal = (options: PayPalOptions) => {
 		async createAuthorizationURL({ state, codeVerifier, redirectURI }) {
 			if (!options.clientId || !options.clientSecret) {
 				logger.error(
-					"Client Id and Client Secret is required for PayPal. Make sure to provide them in the options.",
+					"Client ID and Client Secret is required for PayPal. Make sure to provide them in the options.",
 				);
 				throw new BetterAuthError("CLIENT_ID_AND_SECRET_REQUIRED");
 			}

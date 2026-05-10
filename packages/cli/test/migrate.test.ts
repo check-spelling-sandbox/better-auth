@@ -32,7 +32,7 @@ describe("migrate base auth instance", () => {
 		const signUpRes = await auth.api.signUpEmail({
 			body: {
 				name: "test",
-				email: "test@email.com",
+				email: "test@example.com",
 				password: "password",
 			},
 		});

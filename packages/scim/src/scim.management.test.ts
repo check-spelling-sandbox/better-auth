@@ -15,7 +15,7 @@ const createTestInstance = (
 	organizationOptions?: OrganizationOptions,
 ) => {
 	const testUser = {
-		email: "test@email.com",
+		email: "test@example.com",
 		password: "password",
 		name: "Test User",
 	};

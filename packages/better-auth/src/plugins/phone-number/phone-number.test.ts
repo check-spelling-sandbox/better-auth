@@ -359,7 +359,7 @@ describe("phone auth flow", async () => {
 		expect(res.data?.status).toBe(true);
 	});
 
-	const newEmail = "new-email@email.com";
+	const newEmail = "new-email@example.com";
 	it("should set password and update user", async () => {
 		await auth.api.setPassword({
 			body: {
@@ -562,7 +562,7 @@ describe("reset password flow attempts", async () => {
 
 	it("should reset password and create credential account", async () => {
 		const testUser2 = {
-			email: "test-user2@email.com",
+			email: "test-user2@example.com",
 			phoneNumber: "+2519111213142",
 		};
 		await client.phoneNumber.sendOtp({

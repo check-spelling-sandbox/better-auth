@@ -53,7 +53,7 @@ export function checkSkipProxy(
 		return true;
 	}
 
-	// Determine production URL (fallback to baseURL if not set)
+	// Determine production URL (fall back to baseURL if not set)
 	const productionURL =
 		opts?.productionURL || env.BETTER_AUTH_URL || ctx.context.baseURL;
 	if (!productionURL) {

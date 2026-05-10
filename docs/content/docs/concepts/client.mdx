@@ -238,7 +238,7 @@ You can also pass fetch options to most of the client functions. Either as the s
 import { authClient } from "@/lib/auth-client"
 
 await authClient.signIn.email({
-    email: "email@email.com",
+    email: "email@example.com",
     password: "password1234",
 }, {
     onSuccess(ctx) {
@@ -249,7 +249,7 @@ await authClient.signIn.email({
 //or
 
 await authClient.signIn.email({
-    email: "email@email.com",
+    email: "email@example.com",
     password: "password1234",
     fetchOptions: {
         onSuccess(ctx) {
@@ -372,7 +372,7 @@ The error object contains the following properties:
 import { authClient } from "@/lib/auth-client"
 
 const { data, error } = await authClient.signIn.email({
-    email: "email@email.com",
+    email: "email@example.com",
     password: "password1234"
 })
 if (error) {
@@ -386,7 +386,7 @@ If the action accepts a `fetchOptions` option, you can pass an `onError` callbac
 import { authClient } from "@/lib/auth-client"
 
 await authClient.signIn.email({
-    email: "email@email.com",
+    email: "email@example.com",
     password: "password1234",
 }, {
     onError(ctx) {
@@ -396,7 +396,7 @@ await authClient.signIn.email({
 
 //or
 await authClient.signIn.email({
-    email: "email@email.com",
+    email: "email@example.com",
     password: "password1234",
     fetchOptions: {
         onError(ctx) {
@@ -450,7 +450,7 @@ const getErrorMessage = (code: string, lang: "en" | "es") => {
 
 
 const { error } = await authClient.signUp.email({
-	email: "user@email.com",
+	email: "user@example.com",
 	password: "password",
 	name: "User",
 });
@@ -482,6 +482,6 @@ once you've added the plugin, you can use the new functions provided by the plug
 import { authClient } from "@/lib/auth-client"
 
 await authClient.signIn.magicLink({
-    email: "test@email.com"
+    email: "test@example.com"
 })
 ```

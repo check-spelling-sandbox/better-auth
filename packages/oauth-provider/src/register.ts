@@ -385,7 +385,7 @@ export function oauthToSchema(input: OAuthClient): SchemaClient<Scope[]> {
 /**
  * Converts a Database Schema to an OAuth 2.0 Dynamic Client Schema
  * @param input
- * @param cleaned - default true, determines if the output has only Oauth 2.0 compatible data
+ * @param cleaned - default true, determines if the output has only OAuth 2.0 compatible data
  * @returns
  */
 export function schemaToOAuth(input: SchemaClient<Scope[]>): OAuthClient {

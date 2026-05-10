@@ -480,7 +480,7 @@ describe("getConfig", async () => {
 		const authPath = path.join(tmpDir, "server", "auth");
 		await fs.mkdir(authPath, { recursive: true });
 
-		// Create root tsconfig.json with reference to non-existent file
+		// Create root tsconfig.json with reference to nonexistent file
 		await fs.writeFile(
 			path.join(tmpDir, "tsconfig.json"),
 			`{
@@ -490,7 +490,7 @@ describe("getConfig", async () => {
 					}
 				},
 				"references": [
-					{ "path": "./non-existent" }
+					{ "path": "./nonexistent" }
 				]
 			}`,
 		);

@@ -109,7 +109,7 @@ export async function verifyTwoFactor(ctx: GenericEndpointContext) {
 						ctx.context.secret,
 						trustDeviceCookie.attributes,
 					);
-					// delete the dont remember me cookie
+					// delete the don't remember me cookie
 					expireCookie(ctx, ctx.context.authCookies.dontRememberToken);
 				}
 				return ctx.json({

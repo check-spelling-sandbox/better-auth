@@ -12,7 +12,7 @@ export {
 	ATTR_HTTP_ROUTE,
 };
 
-/** Operation identifier (e.g. getSession, signUpWithEmailAndPassword). Uses endpoint operationId when set, otherwise the endpoint key. */
+/** Operation identifier (e.g. getSession, signUpWithEmailAndPassword). Uses endpoint operationId when set; otherwise, the endpoint key. */
 export const ATTR_OPERATION_ID = "better_auth.operation_id" as const;
 
 /** Hook type (e.g. before, after, create.before). */

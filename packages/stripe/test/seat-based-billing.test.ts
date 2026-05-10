@@ -105,7 +105,7 @@ describe("seat-based billing", () => {
 
 		await client.signUp.email(
 			{
-				email: "seat-test@email.com",
+				email: "seat-test@example.com",
 				password: "password",
 				name: "Seat Test User",
 			},
@@ -113,7 +113,7 @@ describe("seat-based billing", () => {
 		);
 		const headers = new Headers();
 		await client.signIn.email(
-			{ email: "seat-test@email.com", password: "password" },
+			{ email: "seat-test@example.com", password: "password" },
 			{ throw: true, onSuccess: sessionSetter(headers) },
 		);
 
@@ -224,7 +224,7 @@ describe("seat-based billing", () => {
 
 		await client.signUp.email(
 			{
-				email: "meter-test@email.com",
+				email: "meter-test@example.com",
 				password: "password",
 				name: "Meter Test User",
 			},
@@ -232,7 +232,7 @@ describe("seat-based billing", () => {
 		);
 		const headers = new Headers();
 		await client.signIn.email(
-			{ email: "meter-test@email.com", password: "password" },
+			{ email: "meter-test@example.com", password: "password" },
 			{ throw: true, onSuccess: sessionSetter(headers) },
 		);
 
@@ -304,7 +304,7 @@ describe("seat-based billing", () => {
 
 			await c2.signUp.email(
 				{
-					email: "no-meter@email.com",
+					email: "no-meter@example.com",
 					password: "password",
 					name: "No Meter User",
 				},
@@ -312,7 +312,7 @@ describe("seat-based billing", () => {
 			);
 			const h2 = new Headers();
 			await c2.signIn.email(
-				{ email: "no-meter@email.com", password: "password" },
+				{ email: "no-meter@example.com", password: "password" },
 				{ throw: true, onSuccess: ss2(h2) },
 			);
 
@@ -368,7 +368,7 @@ describe("seat-based billing", () => {
 
 		await client.signUp.email(
 			{
-				email: "seat-only@email.com",
+				email: "seat-only@example.com",
 				password: "password",
 				name: "Seat Only",
 			},
@@ -376,7 +376,7 @@ describe("seat-based billing", () => {
 		);
 		const headers = new Headers();
 		await client.signIn.email(
-			{ email: "seat-only@email.com", password: "password" },
+			{ email: "seat-only@example.com", password: "password" },
 			{ throw: true, onSuccess: sessionSetter(headers) },
 		);
 

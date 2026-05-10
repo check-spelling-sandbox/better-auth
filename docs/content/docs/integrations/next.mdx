@@ -115,7 +115,7 @@ import { auth } from "@/lib/auth"
 const signIn = async () => {
     await auth.api.signInEmail({
         body: {
-            email: "user@email.com",
+            email: "user@example.com",
             password: "password",
         }
     })
@@ -148,7 +148,7 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard"], // Specify the routes the middleware applies to
+  matcher: ["/dashboard"], // Specify the routes to which the middleware applies
 };
 ```
 
@@ -172,7 +172,7 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-	matcher: ["/dashboard"], // Specify the routes the middleware applies to
+	matcher: ["/dashboard"], // Specify the routes to which the middleware applies
 };
 ```
 
@@ -203,7 +203,7 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   runtime: "nodejs", // Required for auth.api calls
-  matcher: ["/dashboard"], // Specify the routes the middleware applies to
+  matcher: ["/dashboard"], // Specify the routes to which the middleware applies
 };
 ```
 
@@ -306,7 +306,7 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-	matcher: ["/dashboard"], // Specify the routes the middleware applies to
+	matcher: ["/dashboard"], // Specify the routes to which the middleware applies
 };
 ```
 

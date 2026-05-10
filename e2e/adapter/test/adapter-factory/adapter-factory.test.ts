@@ -374,7 +374,7 @@ describe("Create Adapter Helper", async () => {
 					model: "user",
 					data: { name: "test-name" },
 				});
-				// Id will still be present, due to the transformOutput function. However it will be undefined, vvvvv
+				// ID will still be present, due to the transformOutput function. However it will be undefined, vvvvv
 				expect(res2).toHaveProperty("id");
 				expect(typeof res2?.id).toEqual("undefined");
 				// In a real case, the `id` should always be present
@@ -1764,7 +1764,7 @@ describe("Fallback JoinOption System", async () => {
 				},
 				options: {
 					experimental: {
-						// explicitally defining since in the future `join` will likely be default which would break this test
+						// explicitly defining since in the future `join` will likely be default which would break this test
 						joins: false,
 					},
 				},
@@ -1829,7 +1829,7 @@ describe("Fallback JoinOption System", async () => {
 				},
 				options: {
 					experimental: {
-						// explicitally defining since in the future `join` will likely be default which would break this test
+						// explicitly defining since in the future `join` will likely be default which would break this test
 						joins: false,
 					},
 				},
@@ -1910,7 +1910,7 @@ describe("Fallback JoinOption System", async () => {
 				},
 				options: {
 					experimental: {
-						// explicitally defining since in the future `join` will likely be default which would break this test
+						// explicitly defining since in the future `join` will likely be default which would break this test
 						joins: false,
 					},
 				},
@@ -1949,7 +1949,7 @@ describe("Fallback JoinOption System", async () => {
 				},
 				options: {
 					experimental: {
-						// explicitally defining since in the future `join` will likely be default which would break this test
+						// explicitly defining since in the future `join` will likely be default which would break this test
 						joins: false,
 					},
 				},

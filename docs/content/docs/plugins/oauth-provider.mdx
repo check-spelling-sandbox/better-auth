@@ -504,7 +504,7 @@ This implementation currently issues a new refresh token for every refresh reque
 
 ### Consent Endpoint
 
-Accept or deny user consent for a set of scopes. Note that when denying scopes, the consent cancels and pre-existing consent remains. To remove consent, delete that user's "oauthConsent" for that client.
+Accept or deny user consent for a set of scopes. Note that when denying scopes, the consent cancels and preexisting consent remains. To remove consent, delete that user's "oauthConsent" for that client.
 
 <APIMethod path="/oauth2/consent" method="POST" requireSession>
   ```ts
@@ -989,7 +989,7 @@ By default, we support the following scopes are supported:
 * `email`: Returns email and email\_verified
 * `offline_access`: Returns a refresh token
 
-The scopes configuration can contain as many or as few scopes as you wish! Note that `openid` is required to be considered an OIDC server, otherwise this is a standard OAuth 2.1 server. All supported scopes must be in this array.
+The scopes configuration can contain as many or as few scopes as you wish! Note that `openid` is required to be considered an OIDC server; otherwise, this is a standard OAuth 2.1 server. All supported scopes must be in this array.
 
 ```ts title="auth.ts"
 oauthProvider({
@@ -1001,7 +1001,7 @@ oauthProvider({
 
 Internally, we support the following claims are supported: \["sub", "iss", "aud", "exp", "iat", "sid", "scope", "azp"].
 
-Id token and user info claims should be namespaced when possible to avoid potential future conflicts.
+ID token and user info claims should be namespaced when possible to avoid potential future conflicts.
 
 Claims added inside `customIdTokenClaims` and `customUserInfoClaims` should be added to the `advertisedMetadata.claims_supported` so clients can validate that claim received. In the following example, it would be the base claims plus `locale` and `https://example.com/org`.
 
@@ -1713,7 +1713,7 @@ export const oauthClientTableFields = [
   {
     name: "uri",
     type: "string",
-    description: "Website Uri displayed on UI Screens",
+    description: "Website URI displayed on UI Screens",
     isOptional: true,
   },
   {
@@ -2028,7 +2028,7 @@ export const oauthConsentTableFields = [
 
 Add a `prefix` to opaque access tokens, refresh tokens, or client secrets. This is useful for Secret Scanners (ie. [GitHub Secret Scanners](https://docs.github.com/code-security/secret-scanning), [GitGuardian](https://www.gitguardian.com/solutions/secrets-scanning), [Trufflehog](https://github.com/trufflesecurity/trufflehog)) that may rely on the prefix to help determine the token format.
 
-We recommend to add a prefix to each of the following prior to your first production deployment. Once deployed consider them immutable, otherwise the following generate functions as specified:
+We recommend to add a prefix to each of the following prior to your first production deployment. Once deployed consider them immutable; otherwise, the following generate functions as specified:
 
 The following are available under the `prefix` configuration setting:
 

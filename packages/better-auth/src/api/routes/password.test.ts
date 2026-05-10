@@ -93,7 +93,7 @@ describe("forgot password", async () => {
 		const newHeaders = new Headers();
 		const signUpRes = await client.signUp.email({
 			name: "Test Reset User",
-			email: "test-reset-updated@email.com",
+			email: "test-reset-updated@example.com",
 			password: "originalPassword123",
 			fetchOptions: {
 				onSuccess(ctx) {
@@ -128,7 +128,7 @@ describe("forgot password", async () => {
 		// Request password reset
 		let resetToken = "";
 		await client.requestPasswordReset({
-			email: "test-reset-updated@email.com",
+			email: "test-reset-updated@example.com",
 			redirectTo: "http://localhost:3000",
 		});
 
@@ -171,7 +171,7 @@ describe("forgot password", async () => {
 
 		// Verify user can sign in with new password
 		const signInRes = await client.signIn.email({
-			email: "test-reset-updated@email.com",
+			email: "test-reset-updated@example.com",
 			password: "newResetPassword123",
 		});
 		expect(signInRes.data?.user).toBeDefined();
@@ -314,7 +314,7 @@ describe("forgot password", async () => {
 			},
 		});
 		const res = await client.requestPasswordReset({
-			email: "non-existent-user@email.com",
+			email: "nonexistent-user@example.com",
 			redirectTo: "http://localhost:3000",
 		});
 		expect(res.data?.message).toBe(

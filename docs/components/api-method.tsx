@@ -92,19 +92,19 @@ export const APIMethod = ({
 	 */
 	method?: "POST" | "GET" | "DELETE" | "PUT";
 	/**
-	 * Wether the endpoint is server only or not.
+	 * Whether the endpoint is server only or not.
 	 *
 	 * @default false
 	 */
 	isServerOnly?: boolean;
 	/**
-	 * Wether the code example is client-only, thus meaning it's an endpoint.
+	 * Whether the code example is client-only, thus meaning it's an endpoint.
 	 *
 	 * @default false
 	 */
 	isClientOnly?: boolean;
 	/**
-	 * Wether the code example is meant for external consumers
+	 * Whether the code example is meant for external consumers
 	 */
 	isExternalOnly?: boolean;
 	/**
@@ -518,7 +518,7 @@ function tsxifyBackticks(input: string): JSX.Element {
 
 function parseCode(children: JSX.Element) {
 	// These two variables are essentially taking the `children` JSX shiki code, and converting them to
-	// an array string purely of it's code content.
+	// an array string purely of its code content.
 	const arrayOfJSXCode = children?.props.children.props.children.props.children
 		.map((x: any) =>
 			x === "\n" ? { props: { children: { props: { children: "\n" } } } } : x,

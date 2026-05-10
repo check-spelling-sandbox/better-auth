@@ -182,7 +182,7 @@ export interface AuthorizationQuery {
 	 */
 	redirect_uri?: string | undefined;
 	/**
-	 * The scope of the request. Must be a space-separated list of case sensitive strings.
+	 * The scope of the request. Must be a space-separated list of case-sensitive strings.
 	 *
 	 * - "openid" is required for all requests
 	 * - "profile" is required for requests that require user profile information.

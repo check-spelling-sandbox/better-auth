@@ -12,7 +12,7 @@ import type { SCIMOptions } from "./types";
 
 const createTestInstance = (scimOptions?: SCIMOptions) => {
 	const testUser = {
-		email: "test@email.com",
+		email: "test@example.com",
 		password: "password",
 		name: "Test User",
 	};
@@ -648,7 +648,7 @@ describe("SCIM", () => {
 			const scimToken = await getSCIMToken();
 
 			await authClient.signUp.email({
-				email: "existing@email.com",
+				email: "existing@example.com",
 				password: "the password",
 				name: "existing user",
 			});
@@ -656,7 +656,7 @@ describe("SCIM", () => {
 			const response = await auth.api.createSCIMUser({
 				body: {
 					userName: "the-username",
-					emails: [{ value: "existing@email.com" }],
+					emails: [{ value: "existing@example.com" }],
 				},
 				headers: {
 					authorization: `Bearer ${scimToken}`,
@@ -676,7 +676,7 @@ describe("SCIM", () => {
 				emails: [
 					{
 						primary: true,
-						value: "existing@email.com",
+						value: "existing@example.com",
 					},
 				],
 				externalId: "the-username",
@@ -693,7 +693,7 @@ describe("SCIM", () => {
 				schemas: expect.arrayContaining([
 					"urn:ietf:params:scim:schemas:core:2.0:User",
 				]),
-				userName: "existing@email.com",
+				userName: "existing@example.com",
 			});
 		});
 

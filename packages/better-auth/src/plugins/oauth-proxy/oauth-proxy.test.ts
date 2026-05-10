@@ -15,7 +15,7 @@ const server = setupServer();
 
 beforeAll(async () => {
 	const data: GoogleProfile = {
-		email: "user@email.com",
+		email: "user@example.com",
 		email_verified: true,
 		name: "First Last",
 		picture: "https://lh3.googleusercontent.com/a-/AOh14GjQ4Z7Vw",
@@ -498,7 +498,7 @@ describe("oauth-proxy", async () => {
 			}>(decrypted);
 
 			expect(payload.userInfo).toBeDefined();
-			expect(payload.userInfo.email).toBe("user@email.com");
+			expect(payload.userInfo.email).toBe("user@example.com");
 			expect(payload.account).toBeDefined();
 			expect(payload.account.providerId).toBe("google");
 			expect(payload.state).toBeDefined();
@@ -599,7 +599,7 @@ describe("oauth-proxy", async () => {
 			// Step 4: Verify user was created ONLY in preview DB
 			const previewUsersAfter = await previewCtx.internalAdapter.listUsers();
 			expect(previewUsersAfter.length).toBe(1);
-			expect(previewUsersAfter[0]?.email).toBe("user@email.com");
+			expect(previewUsersAfter[0]?.email).toBe("user@example.com");
 
 			// Verify account was created
 			const previewAccounts = await previewCtx.internalAdapter.findAccounts(
@@ -636,7 +636,7 @@ describe("oauth-proxy", async () => {
 			const payload = {
 				userInfo: {
 					id: "123",
-					email: "user@email.com",
+					email: "user@example.com",
 					name: "Test User",
 					emailVerified: true,
 				},
@@ -687,7 +687,7 @@ describe("oauth-proxy", async () => {
 			const payload = {
 				userInfo: {
 					id: "123",
-					email: "user@email.com",
+					email: "user@example.com",
 					name: "Test User",
 					emailVerified: true,
 				},
@@ -792,7 +792,7 @@ describe("oauth-proxy", async () => {
 			expect(payload.account.providerId).toBe("google");
 		});
 
-		it("should reject payloads with missing required fields", async () => {
+		it("should reject payloads missing required fields", async () => {
 			const { client, auth } = await getTestInstance({
 				plugins: [
 					oAuthProxy({
@@ -812,7 +812,7 @@ describe("oauth-proxy", async () => {
 			const payloadMissingTimestamp = {
 				userInfo: {
 					id: "123",
-					email: "user@email.com",
+					email: "user@example.com",
 					name: "Test User",
 					emailVerified: true,
 				},
@@ -872,7 +872,7 @@ describe("oauth-proxy", async () => {
 			const payloadStringTimestamp = {
 				userInfo: {
 					id: "123",
-					email: "user@email.com",
+					email: "user@example.com",
 					name: "Test User",
 					emailVerified: true,
 				},
@@ -982,7 +982,7 @@ describe("oauth-proxy", async () => {
 				key: dedicatedSecret,
 				data: encryptedProfile!,
 			});
-			expect(decryptedWithDedicated).toContain("user@email.com");
+			expect(decryptedWithDedicated).toContain("user@example.com");
 
 			const { secret: globalSecret } = await production.auth.$context;
 			await expect(
@@ -1006,7 +1006,7 @@ describe("oauth-proxy", async () => {
 			const previewCtx = await preview.auth.$context;
 			const users = await previewCtx.internalAdapter.listUsers();
 			expect(users.length).toBe(1);
-			expect(users[0]?.email).toBe("user@email.com");
+			expect(users[0]?.email).toBe("user@example.com");
 		});
 
 		it("should handle existing user on preview", async () => {
@@ -1033,7 +1033,7 @@ describe("oauth-proxy", async () => {
 			// Pre-create user in preview DB
 			await previewCtx.internalAdapter.createUser({
 				id: "existing-user-id",
-				email: "user@email.com",
+				email: "user@example.com",
 				name: "Existing User",
 				emailVerified: true,
 			});
@@ -1042,7 +1042,7 @@ describe("oauth-proxy", async () => {
 			const payload = {
 				userInfo: {
 					id: "google-user-id",
-					email: "user@email.com",
+					email: "user@example.com",
 					name: "New Name",
 					emailVerified: true,
 				},
@@ -1075,7 +1075,7 @@ describe("oauth-proxy", async () => {
 			// User count should still be 1 (linked account, not new user)
 			const users = await previewCtx.internalAdapter.listUsers();
 			expect(users.length).toBe(1);
-			expect(users[0]?.email).toBe("user@email.com");
+			expect(users[0]?.email).toBe("user@example.com");
 
 			// Should have linked the google account
 			const accounts = await previewCtx.internalAdapter.findAccounts(

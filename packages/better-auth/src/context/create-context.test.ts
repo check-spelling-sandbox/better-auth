@@ -260,7 +260,7 @@ describe("base context creation", () => {
 			vi.unstubAllEnvs();
 		});
 
-		it("should fallback to AUTH_SECRET env", async () => {
+		it("should fall back to AUTH_SECRET env", async () => {
 			vi.stubEnv(
 				"AUTH_SECRET",
 				"auth-secret-that-is-long-enough-for-validation-test",
@@ -726,7 +726,7 @@ describe("base context creation", () => {
 	});
 
 	describe("generate ID", () => {
-		it("should fallback to advanced.database.generateId", async () => {
+		it("should fall back to advanced.database.generateId", async () => {
 			const databaseGenerateId = vi.fn(() => "db-id");
 			const res = await initBase({
 				advanced: {
@@ -1537,7 +1537,7 @@ describe("base context creation", () => {
 			vi.unstubAllEnvs();
 		});
 
-		it("should fallback to default secret when secret is empty", async () => {
+		it("should fall back to default secret when secret is empty", async () => {
 			vi.stubEnv("BETTER_AUTH_SECRET", "");
 			vi.stubEnv("AUTH_SECRET", "");
 

@@ -352,7 +352,7 @@ const createTemplateCallback =
 			AuthnStatement: "",
 			attrFirstName: "Test",
 			attrLastName: "User",
-			attrEmail: "test@email.com",
+			attrEmail: "test@example.com",
 		};
 
 		return {
@@ -487,7 +487,7 @@ const createMockSAMLIdP = (port: number, options: MockIdPOptions = {}) => {
 
 			const emailCase = req.query.emailCase as string;
 			const emailValue =
-				emailCase === "mixed" ? "TestUser@Example.com" : "test@email.com";
+				emailCase === "mixed" ? "TestUser@Example.com" : "test@example.com";
 			const user = {
 				email: emailValue,
 				emailAddress: emailValue,
@@ -781,7 +781,7 @@ describe("SAML SSO with signed AuthnRequests", async () => {
 		expect(relayStateIdx).toBeLessThan(signatureIdx);
 	});
 
-	it("should produce a signature the IdP can verify", async () => {
+	it("should produce a signature that the IdP can verify", async () => {
 		const signInResponse = await auth.api.signInSSO({
 			body: {
 				providerId: "signed-saml",
@@ -911,7 +911,7 @@ describe("SAML SSO without signed AuthnRequests", async () => {
 	});
 });
 
-describe("SAML SSO with idpMetadata but without metadata XML (fallback to top-level config)", async () => {
+describe("SAML SSO with idpMetadata but without metadata XML (fall back to top-level config)", async () => {
 	const data = {
 		user: [],
 		session: [],
@@ -945,7 +945,7 @@ describe("SAML SSO with idpMetadata but without metadata XML (fallback to top-le
 					// The fix ensures signingCert is used (not encryptCert) and entryPoint/issuer fallbacks work
 					idpMetadata: {
 						// No metadata XML provided
-						// cert could be provided here, but we test fallback to top-level cert
+						// cert could be provided here, but we test falling back to top-level cert
 						entityID: "http://localhost:8081/custom-entity-id",
 					},
 					identifierFormat:
@@ -1044,7 +1044,7 @@ describe("SAML SSO", async () => {
 	});
 
 	const testUser = {
-		email: "test@email.com",
+		email: "test@example.com",
 		password: "password",
 		name: "Test User",
 	};
@@ -1595,7 +1595,7 @@ describe("SAML SSO", async () => {
 		expect(callbackResponse.headers.get("location")).toContain("dashboard");
 	});
 
-	it("should initiate SAML login and fallback to callbackUrl on invalid RelayState", async () => {
+	it("should initiate SAML login and fall back to callbackUrl on invalid RelayState", async () => {
 		const { auth, signInWithTestUser } = await getTestInstance({
 			plugins: [sso()],
 		});
@@ -1775,7 +1775,7 @@ describe("SAML SSO", async () => {
 		});
 
 		// Identity Provider-initiated: Get SAML response directly from IdP
-		// The mock IdP will return test@email.com, which doesn't exist in the DB
+		// The mock IdP will return test@example.com, which doesn't exist in the DB
 		let samlResponse: any;
 		await betterFetch("http://localhost:8081/api/sso/saml2/idp/post", {
 			onSuccess: async (context) => {
@@ -1908,7 +1908,7 @@ describe("SAML SSO", async () => {
 			model: "user",
 			data: {
 				id: "existing-user-id",
-				email: "test@email.com",
+				email: "test@example.com",
 				name: "Existing User",
 				emailVerified: true,
 				createdAt: new Date(),
@@ -1988,7 +1988,7 @@ describe("SAML SSO", async () => {
 			model: "user",
 			data: {
 				id: "existing-user-id-2",
-				email: "test@email.com",
+				email: "test@example.com",
 				name: "Existing User",
 				emailVerified: true,
 				createdAt: new Date(),
@@ -2608,7 +2608,7 @@ describe("SAML SSO", async () => {
 	/**
 	 * @see https://github.com/better-auth/better-auth/issues/7777
 	 */
-	it("should fallback to provider callbackUrl on ACS route when RelayState is invalid", async () => {
+	it("should fall back to provider callbackUrl on ACS route when RelayState is invalid", async () => {
 		const { auth, signInWithTestUser } = await getTestInstance({
 			plugins: [sso()],
 		});
@@ -2647,7 +2647,7 @@ describe("SAML SSO", async () => {
 			},
 		});
 
-		// POST with a garbage RelayState - should fallback to provider callbackUrl
+		// POST with a garbage RelayState - should fall back to provider callbackUrl
 		const acsResponse = await auth.handler(
 			new Request(
 				"http://localhost:3000/api/auth/sso/saml2/sp/acs/saml-acs-bad-relay-provider",
@@ -2716,7 +2716,7 @@ describe("SAML SSO with custom fields", () => {
 	});
 
 	const testUser = {
-		email: "test@email.com",
+		email: "test@example.com",
 		password: "password",
 		name: "Test User",
 	};
@@ -5356,7 +5356,7 @@ describe("SAML Single Logout (SLO)", () => {
 			const logoutRequest = idp.createLogoutRequest(
 				sp,
 				saml.Constants.wording.binding.redirect,
-				{ nameID: "test@email.com" },
+				{ nameID: "test@example.com" },
 				"http://localhost:8081/after-logout",
 			) as { context: string };
 

@@ -47,7 +47,7 @@ describe("team", async () => {
 	let secondTeamId: string;
 
 	const invitedUser = {
-		email: "invited@email.com",
+		email: "invited@example.com",
 		password: "password",
 		name: "Invited User",
 	};
@@ -337,7 +337,7 @@ describe("team", async () => {
 		const newUserHeaders = new Headers();
 		const newUserRes = await client.signUp.email(
 			{
-				email: "teamuser@email.com",
+				email: "teamuser@example.com",
 				password: "password",
 				name: "Team User",
 			},
@@ -784,7 +784,7 @@ describe("multi team support", async () => {
 	const invitedUser = await auth.api.signUpEmail({
 		body: {
 			name: "Invited User",
-			email: "invited@email.com",
+			email: "invited@example.com",
 			password: "password",
 		},
 		returnHeaders: true,
@@ -818,7 +818,7 @@ describe("multi team support", async () => {
 
 	it("should create 3 teams", async () => {
 		expect(organizationId).toBeDefined();
-		if (!organizationId) throw Error("can not run test");
+		if (!organizationId) throw Error("cannot run test");
 
 		const team1 = await auth.api.createTeam({
 			headers: admin.headers,
@@ -867,7 +867,7 @@ describe("multi team support", async () => {
 		expect(team3Id).toBeDefined();
 
 		if (!organizationId || !team1Id || !team2Id || !team3Id)
-			throw Error("can not run test");
+			throw Error("cannot run test");
 
 		const invitation = await auth.api.createInvitation({
 			headers: admin.headers,
@@ -890,7 +890,7 @@ describe("multi team support", async () => {
 	it("should accept invite and join all 3 teams", async () => {
 		expect(invitationId).toBeDefined();
 
-		if (!invitationId) throw Error("can not run test");
+		if (!invitationId) throw Error("cannot run test");
 
 		const accept = await auth.api.acceptInvitation({
 			headers: { cookie: invitedUser.headers.getSetCookie()[0]! },
@@ -903,10 +903,10 @@ describe("multi team support", async () => {
 		expect(accept?.invitation).toBeDefined();
 	});
 
-	it("should have jonied all 3 teams", async () => {
+	it("should have joined all 3 teams", async () => {
 		expect(invitationId).toBeDefined();
 
-		if (!invitationId) throw Error("can not run test");
+		if (!invitationId) throw Error("cannot run test");
 
 		const teams = await auth.api.listUserTeams({
 			headers: { cookie: invitedUser.headers.getSetCookie()[0]! },
@@ -921,7 +921,7 @@ describe("multi team support", async () => {
 		expect(team1Id).toBeDefined();
 		expect(organizationId).toBeDefined();
 
-		if (!team1Id || !organizationId) throw Error("can not run test");
+		if (!team1Id || !organizationId) throw Error("cannot run test");
 
 		const team = await auth.api.setActiveTeam({
 			headers: { cookie: invitedUser.headers.getSetCookie()[0]! },
@@ -940,7 +940,7 @@ describe("multi team support", async () => {
 	it("should allow you to list team members of the current active team", async () => {
 		expect(activeTeamCookie).toBeDefined();
 
-		if (!activeTeamCookie) throw Error("can not run test");
+		if (!activeTeamCookie) throw Error("cannot run test");
 
 		const members = await auth.api.listTeamMembers({
 			headers: { cookie: activeTeamCookie },
@@ -954,7 +954,7 @@ describe("multi team support", async () => {
 		expect(team2Id).toBeDefined();
 		expect(team3Id).toBeDefined();
 
-		if (!team2Id || !team3Id) throw Error("can not run test");
+		if (!team2Id || !team3Id) throw Error("cannot run test");
 
 		const team2Members = await auth.api.listTeamMembers({
 			headers: { cookie: invitedUser.headers.getSetCookie()[0]! },
@@ -980,7 +980,7 @@ describe("multi team support", async () => {
 	let team4Id: string | null = null;
 	it("should directly add a member to a team", async () => {
 		expect(organizationId).toBeDefined();
-		if (!organizationId) throw Error("can not run test");
+		if (!organizationId) throw Error("cannot run test");
 
 		const team = await auth.api.createTeam({
 			headers: admin.headers,
@@ -1012,7 +1012,7 @@ describe("multi team support", async () => {
 
 	it("should remove a member from a team", async () => {
 		expect(team4Id).toBeDefined();
-		if (!team4Id) throw Error("can not run test");
+		if (!team4Id) throw Error("cannot run test");
 
 		await auth.api.removeTeamMember({
 			headers: admin.headers,
@@ -1031,12 +1031,12 @@ describe("multi team support", async () => {
 
 	it("should create invitation without teamId", async () => {
 		expect(organizationId).toBeDefined();
-		if (!organizationId) throw Error("can not run test");
+		if (!organizationId) throw Error("cannot run test");
 
 		const invitation = await auth.api.createInvitation({
 			headers: admin.headers,
 			body: {
-				email: "noteam@email.com",
+				email: "noteam@example.com",
 				role: "member",
 				organizationId,
 			},
@@ -1052,7 +1052,7 @@ describe("multi team support", async () => {
 		const userHeaders = new Headers();
 		const response = await auth.api.signUpEmail({
 			body: {
-				email: "removeteamorguser@email.com",
+				email: "removeteamorguser@example.com",
 				name: "Remove Team Org User",
 				password: "password",
 			},
@@ -1099,7 +1099,7 @@ describe("multi team support", async () => {
 			(m: any) => m.userId === newUser.user.id,
 		);
 		expect(foundMember).toBeDefined();
-		if (!foundMember) throw Error("can not run test");
+		if (!foundMember) throw Error("cannot run test");
 
 		// Confirm user is a member of the team
 		const teamMembersBefore = await auth.api.listTeamMembers({
@@ -1143,7 +1143,7 @@ describe("multi team support", async () => {
 	});
 
 	it("should remove a member from the organization and all their teams when calling leaveOrganization", async () => {
-		const testUserEmail = `leaveorguser${Date.now()}@email.com`;
+		const testUserEmail = `leaveorguser${Date.now()}@example.com`;
 
 		const userHeaders = new Headers();
 		const response = await auth.api.signUpEmail({

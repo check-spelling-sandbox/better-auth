@@ -24,12 +24,12 @@ describe("stripe - organization customer", () => {
 			search: vi.fn().mockResolvedValue({ data: [] }),
 			retrieve: vi.fn().mockResolvedValue({
 				id: "cus_org_mock123",
-				email: "org@email.com",
+				email: "org@example.com",
 				deleted: false,
 			}),
 			update: vi.fn().mockResolvedValue({
 				id: "cus_org_mock123",
-				email: "org@email.com",
+				email: "org@example.com",
 			}),
 		},
 		checkout: {
@@ -57,7 +57,7 @@ describe("stripe - organization customer", () => {
 		},
 	};
 	const testUser = {
-		email: "test@email.com",
+		email: "test@example.com",
 		password: "password",
 		name: "Test User",
 	};
@@ -112,13 +112,13 @@ describe("stripe - organization customer", () => {
 
 		// Create user and organization
 		await client.signUp.email(
-			{ ...testUser, email: "org-customer-test@email.com" },
+			{ ...testUser, email: "org-customer-test@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "org-customer-test@email.com" },
+			{ ...testUser, email: "org-customer-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -193,13 +193,13 @@ describe("stripe - organization customer", () => {
 
 		// Create user and organization with existing stripeCustomerId
 		await client.signUp.email(
-			{ ...testUser, email: "org-existing-customer@email.com" },
+			{ ...testUser, email: "org-existing-customer@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "org-existing-customer@email.com" },
+			{ ...testUser, email: "org-existing-customer@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -267,13 +267,13 @@ describe("stripe - organization customer", () => {
 		);
 
 		await client.signUp.email(
-			{ ...testUser, email: "org-params-test@email.com" },
+			{ ...testUser, email: "org-params-test@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "org-params-test@email.com" },
+			{ ...testUser, email: "org-params-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -324,13 +324,13 @@ describe("stripe - organization customer", () => {
 		const ctx = await auth.$context;
 
 		await client.signUp.email(
-			{ ...testUser, email: "org-portal-test@email.com" },
+			{ ...testUser, email: "org-portal-test@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "org-portal-test@email.com" },
+			{ ...testUser, email: "org-portal-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -403,13 +403,13 @@ describe("stripe - organization customer", () => {
 		const ctx = await auth.$context;
 
 		await client.signUp.email(
-			{ ...testUser, email: "org-cancel-test@email.com" },
+			{ ...testUser, email: "org-cancel-test@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "org-cancel-test@email.com" },
+			{ ...testUser, email: "org-cancel-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -494,13 +494,13 @@ describe("stripe - organization customer", () => {
 		const ctx = await auth.$context;
 
 		await client.signUp.email(
-			{ ...testUser, email: "org-restore-test@email.com" },
+			{ ...testUser, email: "org-restore-test@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "org-restore-test@email.com" },
+			{ ...testUser, email: "org-restore-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -574,13 +574,13 @@ describe("stripe - organization customer", () => {
 		const ctx = await auth.$context;
 
 		await client.signUp.email(
-			{ ...testUser, email: "org-list-test@email.com" },
+			{ ...testUser, email: "org-list-test@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "org-list-test@email.com" },
+			{ ...testUser, email: "org-list-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -685,12 +685,12 @@ describe("stripe - organization customer", () => {
 
 		// Sign up and sign in
 		await client.signUp.email(
-			{ ...testUser, email: "org-webhook-test@email.com" },
+			{ ...testUser, email: "org-webhook-test@example.com" },
 			{ throw: true },
 		);
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "org-webhook-test@email.com" },
+			{ ...testUser, email: "org-webhook-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -771,13 +771,13 @@ describe("stripe - organization customer", () => {
 		const ctx = await auth.$context;
 
 		await client.signUp.email(
-			{ ...testUser, email: "cross-org-test@email.com" },
+			{ ...testUser, email: "cross-org-test@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "cross-org-test@email.com" },
+			{ ...testUser, email: "cross-org-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -858,13 +858,13 @@ describe("stripe - organization customer", () => {
 		);
 
 		await client.signUp.email(
-			{ ...testUser, email: "org-disabled-test@email.com" },
+			{ ...testUser, email: "org-disabled-test@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "org-disabled-test@email.com" },
+			{ ...testUser, email: "org-disabled-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -898,13 +898,13 @@ describe("stripe - organization customer", () => {
 		const ctx = await auth.$context;
 
 		const userRes = await client.signUp.email(
-			{ ...testUser, email: "separate-sub-test@email.com" },
+			{ ...testUser, email: "separate-sub-test@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "separate-sub-test@email.com" },
+			{ ...testUser, email: "separate-sub-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -1039,12 +1039,12 @@ describe("stripe - organization customer", () => {
 
 		// Sign up and sign in
 		await client.signUp.email(
-			{ ...testUser, email: "org-update-webhook-test@email.com" },
+			{ ...testUser, email: "org-update-webhook-test@example.com" },
 			{ throw: true },
 		);
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "org-update-webhook-test@email.com" },
+			{ ...testUser, email: "org-update-webhook-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -1183,12 +1183,12 @@ describe("stripe - organization customer", () => {
 
 		// Sign up and sign in
 		await client.signUp.email(
-			{ ...testUser, email: "org-cancel-webhook-test@email.com" },
+			{ ...testUser, email: "org-cancel-webhook-test@example.com" },
 			{ throw: true },
 		);
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "org-cancel-webhook-test@email.com" },
+			{ ...testUser, email: "org-cancel-webhook-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -1310,12 +1310,12 @@ describe("stripe - organization customer", () => {
 
 		// Sign up and sign in
 		await client.signUp.email(
-			{ ...testUser, email: "org-delete-webhook-test@email.com" },
+			{ ...testUser, email: "org-delete-webhook-test@example.com" },
 			{ throw: true },
 		);
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "org-delete-webhook-test@email.com" },
+			{ ...testUser, email: "org-delete-webhook-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -1386,7 +1386,7 @@ describe("stripe - organization customer", () => {
 		);
 	});
 
-	it("should return ORGANIZATION_NOT_FOUND when upgrading for non-existent organization", async () => {
+	it("should return ORGANIZATION_NOT_FOUND when upgrading for nonexistent organization", async () => {
 		const { client, sessionSetter } = await getTestInstance(
 			{
 				plugins: [organization(), stripe(baseOrgStripeOptions)],
@@ -1400,20 +1400,20 @@ describe("stripe - organization customer", () => {
 		);
 
 		await client.signUp.email(
-			{ ...testUser, email: "org-not-found-test@email.com" },
+			{ ...testUser, email: "org-not-found-test@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "org-not-found-test@email.com" },
+			{ ...testUser, email: "org-not-found-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
 			},
 		);
 
-		// Try to upgrade subscription for non-existent organization
+		// Try to upgrade subscription for nonexistent organization
 		const res = await client.subscription.upgrade({
 			plan: "starter",
 			customerType: "organization",
@@ -1451,13 +1451,13 @@ describe("stripe - organization customer", () => {
 		);
 
 		await client.signUp.email(
-			{ ...testUser, email: "stripe-fail-test@email.com" },
+			{ ...testUser, email: "stripe-fail-test@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "stripe-fail-test@email.com" },
+			{ ...testUser, email: "stripe-fail-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -1505,13 +1505,13 @@ describe("stripe - organization customer", () => {
 			},
 		);
 		await client.signUp.email(
-			{ ...testUser, email: "callback-throw-test@email.com" },
+			{ ...testUser, email: "callback-throw-test@example.com" },
 			{ throw: true },
 		);
 
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "callback-throw-test@email.com" },
+			{ ...testUser, email: "callback-throw-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -1599,12 +1599,12 @@ describe("stripe - organization customer", () => {
 
 		// Sign up and sign in
 		await client.signUp.email(
-			{ ...testUser, email: "org-created-callback-test@email.com" },
+			{ ...testUser, email: "org-created-callback-test@example.com" },
 			{ throw: true },
 		);
 		const headers = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "org-created-callback-test@email.com" },
+			{ ...testUser, email: "org-created-callback-test@example.com" },
 			{
 				throw: true,
 				onSuccess: sessionSetter(headers),
@@ -1735,23 +1735,23 @@ describe("stripe - organization customer", () => {
 
 		// User A signs up
 		await client.signUp.email(
-			{ ...testUser, email: "user-a@email.com" },
+			{ ...testUser, email: "user-a@example.com" },
 			{ throw: true },
 		);
 		const userAHeaders = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "user-a@email.com" },
+			{ ...testUser, email: "user-a@example.com" },
 			{ throw: true, onSuccess: sessionSetter(userAHeaders) },
 		);
 
 		// User B signs up and creates an organization
 		await client.signUp.email(
-			{ ...testUser, email: "user-b@email.com" },
+			{ ...testUser, email: "user-b@example.com" },
 			{ throw: true },
 		);
 		const userBHeaders = new Headers();
 		await client.signIn.email(
-			{ ...testUser, email: "user-b@email.com" },
+			{ ...testUser, email: "user-b@example.com" },
 			{ throw: true, onSuccess: sessionSetter(userBHeaders) },
 		);
 

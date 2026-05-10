@@ -482,7 +482,7 @@ export interface OAuthOptions<
 	 * Use the user and referenceId fields to fetch
 	 * for membership roles/permissions to attach for the token.
 	 * Note that scopes are those that requested,
-	 * permissions are what the the user can actually do which
+	 * permissions are what the user can actually do which
 	 * must be done in this function.
 	 *
 	 * @param info - context that may be useful when creating custom claims
@@ -555,7 +555,7 @@ export interface OAuthOptions<
 	 * NOTE: The prefix is not stored in the database.
 	 *
 	 * Useful when also using the [API Key Plugin](../api-key/index.ts)
-	 * or Secret Scanners (ie Github Secret Scanning, GitGuardian, Trufflehog).
+	 * or Secret Scanners (ie GitHub Secret Scanning, GitGuardian, Trufflehog).
 	 *
 	 * We recommend to append an underscore to make it more identifiable.
 	 */
@@ -743,7 +743,7 @@ export interface OAuthAuthorizationQuery {
 	 */
 	redirect_uri: string;
 	/**
-	 * The scope of the request. Must be a space-separated list of case sensitive strings.
+	 * The scope of the request. Must be a space-separated list of case-sensitive strings.
 	 *
 	 * - "openid" is required for most requests to obtain user id (ie sub)
 	 * - "profile" is required for requests that require user profile information.
@@ -908,9 +908,9 @@ export interface SchemaClient<
 	icon?: string;
 	/** List of contacts for the client. */
 	contacts?: string[];
-	/** Client Terms of Service Uri */
+	/** Client Terms of Service URI */
 	tos?: string;
-	/** Client Privacy Policy Uri */
+	/** Client Privacy Policy URI */
 	policy?: string;
 	//---- User Software Identifiers ----//
 	softwareId?: string;
@@ -1010,7 +1010,7 @@ export interface OAuthOpaqueAccessToken<
 	 */
 	userId?: string;
 	/**
-	 * Reference Id of the consent/authorization.
+	 * Reference ID of the consent/authorization.
 	 *
 	 * Not available in client credentials grant
 	 * where no user is involved.
