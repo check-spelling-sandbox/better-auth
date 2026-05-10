@@ -20,7 +20,7 @@ env:
 
 jobs:
   lint:
-    runs-on: starsling-ubuntu-24.04
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
     concurrency:
@@ -91,7 +91,7 @@ jobs:
         run: pnpm lint:types
 
   typecheck:
-    runs-on: starsling-ubuntu-24.04
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
     concurrency:
@@ -132,7 +132,7 @@ jobs:
         run: pnpm typecheck:dist
 
   test:
-    runs-on: starsling-ubuntu-24.04
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
     timeout-minutes: 30
